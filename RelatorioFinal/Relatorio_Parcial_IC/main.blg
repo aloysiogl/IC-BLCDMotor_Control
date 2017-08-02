@@ -1,0 +1,72 @@
+This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: biblatex.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: main-blx.bib
+Database file #2: bibliography.bib
+I was expecting a `,' or a `}'---line 38 of file bibliography.bib
+ : 
+ : YEAR="2013",
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 45 of file bibliography.bib
+ : 
+ : YEAR="2000",
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Biblatex version: 3.3
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
+You've used 9 entries,
+            6047 wiz_defined-function locations,
+            1171 strings with 8997 characters,
+and the built_in function-call counts, 28258 in all, are:
+= -- 1297
+> -- 1048
+< -- 304
++ -- 415
+- -- 367
+* -- 1761
+:= -- 1826
+add.period$ -- 0
+call.type$ -- 9
+change.case$ -- 187
+chr.to.int$ -- 34
+cite$ -- 16
+duplicate$ -- 2998
+empty$ -- 2760
+format.name$ -- 579
+if$ -- 6557
+int.to.chr$ -- 0
+int.to.str$ -- 23
+missing$ -- 0
+newline$ -- 210
+num.names$ -- 452
+pop$ -- 2651
+preamble$ -- 1
+purify$ -- 224
+quote$ -- 0
+skip$ -- 1822
+stack$ -- 0
+substring$ -- 919
+swap$ -- 883
+text.length$ -- 211
+text.prefix$ -- 0
+top$ -- 1
+type$ -- 330
+warning$ -- 0
+while$ -- 173
+width$ -- 0
+write$ -- 200
+(There were 2 error messages)

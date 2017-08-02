@@ -1,9 +1,60 @@
-\documentclass[10pt,a4paper]{article}
-\usepackage[latin1]{inputenc}
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[english,brazil]{babel}
+\usepackage[utf8]{inputenc}
 \usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
 \usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{url}
+\renewcommand{\baselinestretch}{1.5}
+\usepackage{titling}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=25mm,
+	right=25mm,
+	top=1in,
+	bottom=1in,
+}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{subfig}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage[backend=bibtex,style=ieee,sorting=none]{biblatex}
+\bibliography{bibliography.bib}
+
+\newcolumntype{C}{>{\centering\arraybackslash}p{1em}}
+
+\title{\textbf{Titulo}}
+
+\author{Luis Guilherme Gomes Aguar, Takashi Yoneyama\\
+	Instituto Tecnologico de Aeronautica\\
+	Sao Jose dos Campos, SP, Brazil} %\\
+
+\date{\today}
+
+% ADD THE FOLLOWING COUPLE LINES INTO YOUR PREAMBLE
+\let\OLDthebibliography\thebibliography
+\renewcommand\thebibliography[1]{
+	\OLDthebibliography{#1}
+	\setlength{\parskip}{0pt}
+	\setlength{\itemsep}{0pt plus 0.3ex}
+}
+
+
+% O DOCUMENTO COMEÇA AQUI
 \begin{document}
-	yrutytrytrhkkhk
+	
+	\tableofcontents
+	\newpage
+
+	\maketitle
+	
+	\section{Null}
+	
+	asdad
+	
 \end{document}
