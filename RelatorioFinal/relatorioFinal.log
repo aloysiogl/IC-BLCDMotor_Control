@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.1)  1 AUG 2017 21:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.1)  2 AUG 2017 10:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -975,30 +975,43 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Try loading font information for U+msb on input line 54.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [2]
-(./relatorioFinal.aux)
+)
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 60.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 60.
+
+
+LaTeX Warning: Empty bibliography on input line 89.
+
+[2] [3] (./relatorioFinal.aux)
 Package logreq Info: Writing requests to 'relatorioFinal.run.xml'.
 \openout1 = `relatorioFinal.run.xml'.
 
  )
 (\end occurred when \iftrue on line 49 was incomplete) 
 Here is how much of TeX's memory you used:
- 10894 strings out of 493029
- 167268 string characters out of 6136235
- 330850 words of memory out of 5000000
- 14245 multiletter control sequences out of 15000+600000
- 10104 words of font info for 38 fonts, out of 8000000 for 9000
+ 10922 strings out of 493029
+ 167710 string characters out of 6136235
+ 333005 words of memory out of 5000000
+ 14269 multiletter control sequences out of 15000+600000
+ 11661 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 44i,7n,43p,835b,1555s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 44i,8n,43p,835b,1393s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr12.pfb>
-Output written on relatorioFinal.pdf (2 pages, 43523 bytes).
+type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb>
+Output written on relatorioFinal.pdf (3 pages, 69155 bytes).
 PDF statistics:
- 27 PDF objects out of 1000 (max. 8388607)
- 18 compressed objects within 1 object stream
+ 38 PDF objects out of 1000 (max. 8388607)
+ 26 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
