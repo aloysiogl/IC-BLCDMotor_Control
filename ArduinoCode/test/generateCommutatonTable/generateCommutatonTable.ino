@@ -1,8 +1,8 @@
 //Defining pins for the motor driver circuit
 #define PWM_PIN 3
-#define H1 10
-#define H2 11
-#define H3 12
+#define H1 20
+#define H2 19
+#define H3 18
 #define M1U 4
 #define M1D 5
 #define M2U 6

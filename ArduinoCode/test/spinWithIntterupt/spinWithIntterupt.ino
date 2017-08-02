@@ -32,15 +32,21 @@ void setup() {
   digitalWrite(M3D,LOW);
   analogWrite(PWM_PIN,0);
 
+  //Attaching interruptions for the commutation
+  attachInterrupt(digitalPinToInterrupt(H1), commute, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(H2), commute, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(H3), commute, CHANGE);
+
   //Initial speed (can be changed and the defout is 0)
   analogWrite(3,255);
 }
 
-const int delayTime = 1000;
-
 void loop() {
-  //Cummutation loop
-  commuteD();
+}
+
+//Intterupt function for commutation
+void commute(){
+  commuteD();  
 }
 
 //Function wich finds the next commutation in the commutation table in direct order
