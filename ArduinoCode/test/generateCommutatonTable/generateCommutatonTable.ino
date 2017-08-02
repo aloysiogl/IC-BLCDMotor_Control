@@ -36,7 +36,7 @@ void setup() {
   Serial.begin(9600);
 
   //Initial speed (can be changed and the defout is 0)
-  analogWrite(3,255);
+  analogWrite(3,0);
 }
 
 const int delayTime = 1000;
