@@ -2,11 +2,6 @@ This is BibTeX, Version 0.99d (TeX Live 2015/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: relatorioFinal.aux
 The style file: biblatex.bst
-I couldn't open database file bibliography.bib
----line 4 of file relatorioFinal.aux
- : \bibdata{relatorioFinal-blx,bibliography
- :                                         }
-I'm skipping whatever remains of this command
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -19,6 +14,17 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: relatorioFinal-blx.bib
+Database file #2: bibliography.bib
+I was expecting a `,' or a `}'---line 38 of file bibliography.bib
+ : 
+ : YEAR="2013",
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 45 of file bibliography.bib
+ : 
+ : YEAR="2000",
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Biblatex version: 3.3
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
@@ -63,4 +69,4 @@ warning$ -- 0
 while$ -- 50
 width$ -- 0
 write$ -- 20
-(There was 1 error message)
+(There were 2 error messages)
