@@ -2,16 +2,18 @@
 #include "TimerOne.h"
 
 //Defining pins for the motor driver circuit
-#define PWM_PIN 3
 #define H1 20
 #define H2 19
 #define H3 18
 #define M1U 4
 #define M1D 5
-#define M2U 6
-#define M2D 7
+#define M2U 7
+#define M2D 6
 #define M3U 8
 #define M3D 9
+
+//Variable for speed
+int speed;
 
 //Variable for counting pulses
 volatile unsigned long pulses = 0; 
@@ -43,15 +45,15 @@ void setup() {
   attachInterrupt(digitalPinToInterrupt(H2), commute, CHANGE);
   attachInterrupt(digitalPinToInterrupt(H3), commute, CHANGE);
 
-  //Initial speed (can be changed and the default is 0)
-  analogWrite(3,255);
-
   //Timer interrupt
   Timer1.initialize(500000);
   Timer1.attachInterrupt(control);
 
   //Serial communication initialization for debug and message parsing
   Serial.begin(9600);
+
+  //Speed
+  speed = 255;
 }
 
 void loop() {
@@ -77,7 +79,7 @@ void commuteD(){
     digitalWrite(M1U,HIGH);
     digitalWrite(M1D,LOW);
     digitalWrite(M2U,LOW);
-    digitalWrite(M2D,HIGH);
+    analogWrite(M2D,speed);
     digitalWrite(M3U,LOW);
     digitalWrite(M3D,LOW);
   }
@@ -88,7 +90,7 @@ void commuteD(){
     digitalWrite(M2U,LOW);
     digitalWrite(M2D,LOW);
     digitalWrite(M3U,LOW);
-    digitalWrite(M3D,HIGH);
+    analogWrite(M3D,speed);
   }
   //BC
   else if (digitalRead(H1) == 1 && digitalRead(H2) == 1 && digitalRead(H3) == 0){
@@ -97,12 +99,12 @@ void commuteD(){
     digitalWrite(M2U,HIGH);
     digitalWrite(M2D,LOW);
     digitalWrite(M3U,LOW);
-    digitalWrite(M3D,HIGH);
+    analogWrite(M3D,speed);
   }
   //BA
   else if (digitalRead(H1) == 1 && digitalRead(H2) == 0 && digitalRead(H3) == 0){
     digitalWrite(M1U,LOW);
-    digitalWrite(M1D,HIGH);
+    analogWrite(M1D,speed);
     digitalWrite(M2U,HIGH);
     digitalWrite(M2D,LOW);
     digitalWrite(M3U,LOW);
@@ -111,7 +113,7 @@ void commuteD(){
   //CA
   else if (digitalRead(H1) == 1 && digitalRead(H2) == 0 && digitalRead(H3) == 1){
     digitalWrite(M1U,LOW);
-    digitalWrite(M1D,HIGH);
+    analogWrite(M1D,speed);
     digitalWrite(M2U,LOW);
     digitalWrite(M2D,LOW);
     digitalWrite(M3U,HIGH);
@@ -122,7 +124,7 @@ void commuteD(){
     digitalWrite(M1U,LOW);
     digitalWrite(M1D,LOW);
     digitalWrite(M2U,LOW);
-    digitalWrite(M2D,HIGH);
+    analogWrite(M2D,speed);
     digitalWrite(M3U,HIGH);
     digitalWrite(M3D,LOW);
   }
