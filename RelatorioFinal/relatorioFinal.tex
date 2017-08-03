@@ -1,0 +1,125 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[english,brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{url}
+\renewcommand{\baselinestretch}{1.5}
+\usepackage{titling}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	left=25mm,
+	right=25mm,
+	top=1in,
+	bottom=1in,
+}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{subfig}
+\usepackage{multirow}
+\usepackage[table]{xcolor}
+\usepackage[backend=bibtex,style=ieee,sorting=none]{biblatex}
+\bibliography{bibliography.bib}
+
+\newcolumntype{C}{>{\centering\arraybackslash}p{1em}}
+
+\title{\textbf{Controle de motor elétrico Brushless para robô jogador de futebol Small Size}}
+
+\author{Aloysio Galvão Lopes, Carlos Eguti\\
+	Instituto Tecnológico de Aeronáutica\\
+	São José dos Campos, SP, Brasil} %\\
+
+\date{\today}
+
+% ADD THE FOLLOWING COUPLE LINES INTO YOUR PREAMBLE
+\let\OLDthebibliography\thebibliography
+\renewcommand\thebibliography[1]{
+	\OLDthebibliography{#1}
+	\setlength{\parskip}{0pt}
+	\setlength{\itemsep}{0pt plus 0.3ex}
+}
+
+
+% O DOCUMENTO COME�A AQUI
+\begin{document}
+	
+	\tableofcontents
+	\newpage
+
+	\maketitle
+	
+	\section{Plano Inicial}
+	\textbf{1º bimestre (ago/set)} %Conferir
+	\begin{itemize}
+		\item Estudar controle de formal geral e estudar os mecanismos de controle de motores Brushless.
+	\end{itemize}
+	\textbf{2º bimestre (out/nov)}
+	\begin{itemize}
+		\item Estabelecer o sistema físico e projetar o mecanismo eletrônico para controle do motor.
+		\item  Realizar simulação de tal mecanismo.
+	\end{itemize}
+	\textbf{3º bimestre (dez/jan)}
+	\begin{itemize}
+		\item Estabelecer método de testes eficiente e confeccionar o mecanismo de controle do motor.
+		\item Confecção do relatório parcial.
+	\end{itemize}
+	\textbf{4º bimestre (fev/mar)} %Conferir
+	\begin{itemize}
+		\item Realizar testes iniciais e buscar otimizações no sistema de controle confeccionado.
+	\end{itemize}
+	\textbf{5º bimestre (abr/mai)}
+	\begin{itemize}
+		\item Projetar um novo sistema eletrônico compatível com as características do protótipo do robô Small Size da ITAndroids.
+	\end{itemize}
+	\textbf{6º bimestre (jun/jul)}
+	\begin{itemize}
+		\item Implementar o sistema de controle no protótipo do Small Size da ITAndroids.
+		\item Corrigir erros e buscar otimizações.
+		\item Confecção do relatório parcial.
+	\end{itemize}
+
+	\section{Atividades realizadas}
+	\textbf{(ago/set/out/nov/dez/jan)}
+	\begin{itemize}
+		\item Bolsa ainda não implementada
+	\end{itemize}
+	\textbf{(fev/mar)}
+	\begin{itemize}
+		\item Início das atividades e replanejamento devido à redução do tempo de vigência da bolsa.
+		\item Realização do curso de controle aplicado fornecido pelo grupo de robótica ITAndroids.
+		\item Estudo dos métodos de acionamento dos motores Brushless e do funcionamento mecênico dos motores BLDC o dos motores de passo.
+	\end{itemize}
+		\textbf{(abr/mai)}
+	\begin{itemize}
+		\item Continuidade do curso de controle e estudo do acionamento dos motores BLDC por meio de encoders e sensores de efeito Hall e estudo de técnicas para a montagem da tabela de comutação de um motor BLDC.
+		\item Realização do projeto e montagem do hardware para o primeiro teste de rotação do um motor (com BLDC retirado de drive de CD) em loop aberto e realização do teste de rotação.
+		\item Estudo da modelagem física de motores elétricos DC e compreensão das diferenças da modelagem de um motor BLDC.
+	\end{itemize}
+		\textbf{(jun/jul)}
+		\begin{itemize}
+			\item Adaptação do hardware para o teste de controle do motor Maxon 45fl-200142, utilizado no robô Small Size e realização de seu controle com o auxílio dos sensores de efeito hall, bem como integração inicial à estrutura mecânica do robô.
+			\item Modelagem do motor, desenvolvimento de um controlador PID e posterior simulação por meio do software MATLAB \cite{MATLAB}.
+			\item Implementação do controlador PID em C++ para teste no motor e coleta dos resultados finais do projeto.
+			\item Confecção do relatório final.
+		\end{itemize}
+	\section{Descrição do Problema}
+	
+	
+	
+	\section{Resultados}
+	
+	\section{Conclusão}
+	
+	\section{Agradecimentos}
+	
+	\section{Bibliografia}
+	%\bibliographystyle{IEEEtran}
+	%\bibliographystyle{bibstyle}
+	\printbibliography[heading=none]
+	
+\end{document}

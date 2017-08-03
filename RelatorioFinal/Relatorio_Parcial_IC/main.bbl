@@ -1,0 +1,211 @@
+% $ biblatex auxiliary file $
+% $ biblatex version 2.6 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\entry{P.Robotics}{book}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Thrun}{T.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Burgard}{B.}%
+     {W.}{W.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Fox}{F.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {MIT Press}%
+  }
+  \strng{namehash}{TSBWFD1}
+  \strng{fullhash}{TSBWFD1}
+  \field{title}{Probabilistic Robotics}
+  \field{year}{2005}
+\endentry
+
+\entry{nonlinear_filtering}{book}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Grisan}{G.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Rojovskii}{R.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Oxford Univ. Press}%
+  }
+  \strng{namehash}{GDRB1}
+  \strng{fullhash}{GDRB1}
+  \field{title}{The Oxford Handbook of Nonlinear Filtering}
+  \field{year}{2011}
+\endentry
+
+\entry{Simo_bayesianFiltering}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Särkkä}{S.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Cambridge University Press}%
+  }
+  \strng{namehash}{S1}
+  \strng{fullhash}{S1}
+  \field{title}{Bayesian Filtering and Smoothing}
+  \field{year}{1979}
+\endentry
+
+\entry{Optimal_Filtering}{book}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Anderson}{A.}%
+     {B.~D.~O.}{B.~D.~O.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Moore}{M.}%
+     {J.~B.}{J.~B.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Prentice-Hall, Inc.}%
+  }
+  \strng{namehash}{ABDOMJB1}
+  \strng{fullhash}{ABDOMJB1}
+  \field{title}{Optimal Filtering}
+  \list{location}{1}{%
+    {Englewood Cliffs, N.J.}%
+  }
+  \field{year}{2013}
+\endentry
+
+\entry{unscented_filtering}{book}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Julier}{J.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Uhlmann}{U.}%
+     {J.}{J.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Proceedings of the IEEE 92(3)}%
+  }
+  \strng{namehash}{JSUJ1}
+  \strng{fullhash}{JSUJ1}
+  \field{pages}{401\bibrangedash 422}
+  \field{title}{Unscented filtering and nonlinear estimation}
+\endentry
+
+\entry{ukf}{book}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Wan}{W.}%
+     {E.~A.}{E.~A.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Merwe}{M.}%
+     {R.~V.~D.}{R.~V.~D.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{WEAMRVD1}
+  \strng{fullhash}{WEAMRVD1}
+  \field{pages}{153\bibrangedash 158}
+  \field{title}{The unscented kalman filter for nonlinear estimation}
+\endentry
+
+\entry{monte_carlo_localization}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Dellaert}{D.}%
+     {F.}{F.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Fox}{F.}%
+     {D.}{D.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Burgard}{B.}%
+     {}{}%
+     {w.}{w.}%
+     {}{}}%
+    {{}%
+     {Thrun}{T.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{DFFDBw+1}
+  \strng{fullhash}{DFFDBwTS1}
+  \field{title}{Monte Carlo Localization for mobile robots.}
+  \field{journaltitle}{ICRA}
+\endentry
+
+\entry{particle_filter}{book}{}
+  \name{author}{3}{}{%
+    {{}%
+     {Ristic}{R.}%
+     {B.}{B.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Arulampulam}{A.}%
+     {S.}{S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Gorlon}{G.}%
+     {N.}{N.}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {Artech House}%
+  }
+  \strng{namehash}{RBASGN1}
+  \strng{fullhash}{RBASGN1}
+  \field{title}{Beyond the Kalman Filter: Particle FIlters for Tracking
+  Applications}
+  \field{year}{2014}
+\endentry
+
+\lossort
+\endlossort
+
+\endinput
