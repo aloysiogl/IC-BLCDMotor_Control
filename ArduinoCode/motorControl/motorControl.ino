@@ -1,3 +1,6 @@
+//Timer interrupt library
+#include "TimerOne.h"
+
 //Defining pins for the motor driver circuit
 #define PWM_PIN 3
 #define H1 20
@@ -9,6 +12,9 @@
 #define M2D 7
 #define M3U 8
 #define M3D 9
+
+//Variable for counting pulses
+volatile unsigned long pulses = 0; 
 
 void setup() {
   //Setting up pins
@@ -37,21 +43,31 @@ void setup() {
   attachInterrupt(digitalPinToInterrupt(H2), commute, CHANGE);
   attachInterrupt(digitalPinToInterrupt(H3), commute, CHANGE);
 
-  //Initial speed (can be changed and the defout is 0)
+  //Initial speed (can be changed and the default is 0)
   analogWrite(3,255);
+
+  //Timer interrupt
+  Timer1.initialize(500000);
+  Timer1.attachInterrupt(control);
+
+  //Serial communication initialization for debug and message parsing
+  Serial.begin(9600);
 }
 
 void loop() {
+  Serial.println(pulses);
 }
 
 //Control interrupt
 void control(){
-  delayMicroseconds(1000000);  
+  
 }
 
 //Intterupt function for commutation
 void commute(){
-  commuteD();  
+  commuteD();
+  //Incrementing pulses
+  ++pulses;
 }
 
 //Function wich finds the next commutation in the commutation table in direct order
