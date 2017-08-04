@@ -11,6 +11,7 @@
 \renewcommand{\baselinestretch}{1.5}
 \usepackage{titling}
 \usepackage{geometry}
+\usepackage{indentfirst}
 \geometry{
 	a4paper,
 	left=25mm,
@@ -108,14 +109,40 @@
 			\item Confecção do relatório final.
 		\end{itemize}
 	\section{Descrição do Problema}
-	
-	
+		A ITAndroids, equipe de robótica do ITA, é uma iniciativa de alunos do ITA que representa a instituição em diversas competições de robótica nacionais e internacionais. O principal objetivo dessa iniciativa é a integração dos alunos com atividades de pesquisa em engenharia, em especial em robótica e inteligência artificial.
+		
+		A ITAndroids acredita que o hardware é fundamental no desenvolvimento de qualquer projeto de robótica, por isso, recentemente tem-se investido bastante no desenvolvimento dessa área. O desenvolvimento de conhecimento na área de controle de motores elétricos, assim, torna-se fundamental para a melhoria técnica da iniciativa.
+		
+		Nesse sentido, abre-se caminho para a participação na categoria Small Size, a qual necessita de uma eletrônica mais desenvolvida o que implica diretamente o desenvolvimento de conhecimento sobre controle de motores. Os motores utilizados para a locomoção dos robôs são motores Brushless, essa escolha se justifica pelo fato de que motores Brushless são mais eficientes, ocupam menos espaço e apresentam desgaste muito menor que motores DC tradicionais.
+		
+		Uma vez que o desgaste mecânico durante as partidas de futebol de robôs Small Size é elevado e é preciso alto rendimento dos sistemas mecânicos os motores BLDC são a escolha ideal; além disso, as principais equipes internacionais, tal como a equipe tailandesa SKUBA \cite{skuba} fazem uso de desses motores. Em contrapartida, o controle deste tipo de atuador mecânico se dá de maneira mais complexa uma vez que a comutação do campo magnético não é feita mecanicamente por escovas. A figura \ref{fig:esquemamotor}, abaixo, ilustra a mecânica de um motor BLDC.
+		
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[width=0.7\linewidth]{images/4-Pole-brushless-DC-motor-animation}
+			\caption{Esquema de um motor elétrico Brushless.}
+			\label{fig:esquemamotor}
+		\end{figure}
+		
+		
+		O controle da comutação do campo magnético para esse tipo de motor é feito eletronicamente, o que acarreta a necessidade de um dispositivo eletrônico tal como um microcontrolador \cite{introducaobldc}. Isso aumenta a complexidade do sistema de locomoção como um todo, no entanto traz diversos ganhos em eficiência para o projeto.
+		
+		Nesse sentido o objetivo principal deste trabalho é compreender o funcionamento de um motor elétrico Brushless e ser capaz de realizar a comutação eletronicamente. Adicionalmente, deseja-se modelar o motor, simular e implementar um controlador PID para um motor Maxon 45fl-200142, o qual é utilizado para a locomoção de um robô Small Size.
 	
 	\section{Resultados}
-	
+		\subsection{Funcionamento de um motor elétrico Brushless}
+		
+		\subsection{Modelo utilizado no estudo}
+		
+		\subsection{Hardware confeccionado para acionamento do motor}
+		
+		\subsection{Simulação do modelo}
+		
+		\subsection{Análise do resultados no motor Maxon 45fl-200142}
 	\section{Conclusão}
 	
 	\section{Agradecimentos}
+	Agradeço ao CNPQ, pelo apoio financeiro durante a realização do projeto, bem como ao meu professor orientador pelo apoio à realização do projeto. Agradeço à iniciativa ITAndroids, por fornecer os treinamentos necessários e recursos materiais para a realização do projeto.
 	
 	\section{Bibliografia}
 	%\bibliographystyle{IEEEtran}

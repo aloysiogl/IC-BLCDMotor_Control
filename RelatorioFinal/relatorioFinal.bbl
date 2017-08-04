@@ -16,6 +16,69 @@
   {}
 \endgroup
 
+\entry{MATLAB}{book}{}
+  \name{author}{1}{}{%
+    {{}%
+     {MATLAB}{M.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \list{publisher}{1}{%
+    {The MathWorks Inc.}%
+  }
+  \strng{namehash}{M1}
+  \strng{fullhash}{M1}
+  \field{title}{version 9.2.0 (R2017a)}
+  \list{location}{1}{%
+    {Natick, Massachusetts}%
+  }
+  \field{year}{2017}
+\endentry
+
+\entry{skuba}{article}{}
+  \name{author}{4}{}{%
+    {{}%
+     {Lertariyasakchai}{L.}%
+     {Phawat}{P.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Panyapiang}{P.}%
+     {Thanakorn}{T.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Chaiso}{C.}%
+     {Krit}{K.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {Sukvichai}{S.}%
+     {Kanjanapan}{K.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{LPPTCK+1}
+  \strng{fullhash}{LPPTCKSK1}
+  \field{title}{SKUBA 2012 Team Description}
+  \field{journaltitle}{Microchip Technology Inc.}
+\endentry
+
+\entry{introducaobldc}{article}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Yedamale}{Y.}%
+     {Padmaraja}{P.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{YP1}
+  \strng{fullhash}{YP1}
+  \field{title}{Brushless DC (BLDC) Motor Fundamentals}
+  \field{journaltitle}{Microchip Technology Inc.}
+\endentry
+
 \lossort
 \endlossort
 

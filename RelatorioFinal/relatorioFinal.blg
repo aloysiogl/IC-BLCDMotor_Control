@@ -15,12 +15,12 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: relatorioFinal-blx.bib
 Database file #2: bibliography.bib
-I was expecting a `,' or a `}'---line 38 of file bibliography.bib
+I was expecting a `,' or a `}'---line 48 of file bibliography.bib
  : 
  : YEAR="2013",
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 45 of file bibliography.bib
+I was expecting a `,' or a `}'---line 55 of file bibliography.bib
  : 
  : YEAR="2000",
 (Error may have been on previous line)
@@ -28,45 +28,45 @@ I'm skipping whatever remains of this entry
 Biblatex version: 3.3
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
-You've used 1 entry,
+You've used 4 entries,
             6047 wiz_defined-function locations,
-            1129 strings with 8111 characters,
-and the built_in function-call counts, 1306 in all, are:
-= -- 64
-> -- 58
-< -- 1
-+ -- 41
-- -- 24
-* -- 23
-:= -- 295
+            1142 strings with 8404 characters,
+and the built_in function-call counts, 10450 in all, are:
+= -- 471
+> -- 374
+< -- 97
++ -- 151
+- -- 126
+* -- 575
+:= -- 803
 add.period$ -- 0
-call.type$ -- 1
-change.case$ -- 0
+call.type$ -- 4
+change.case$ -- 58
 chr.to.int$ -- 34
-cite$ -- 0
-duplicate$ -- 12
-empty$ -- 92
-format.name$ -- 0
-if$ -- 289
+cite$ -- 6
+duplicate$ -- 1058
+empty$ -- 1044
+format.name$ -- 189
+if$ -- 2417
 int.to.chr$ -- 0
-int.to.str$ -- 0
+int.to.str$ -- 8
 missing$ -- 0
-newline$ -- 22
-num.names$ -- 0
-pop$ -- 44
+newline$ -- 85
+num.names$ -- 157
+pop$ -- 1020
 preamble$ -- 1
-purify$ -- 0
+purify$ -- 69
 quote$ -- 0
-skip$ -- 74
+skip$ -- 663
 stack$ -- 0
-substring$ -- 117
-swap$ -- 1
-text.length$ -- 16
+substring$ -- 345
+swap$ -- 299
+text.length$ -- 81
 text.prefix$ -- 0
 top$ -- 1
-type$ -- 26
+type$ -- 140
 warning$ -- 0
-while$ -- 50
+while$ -- 94
 width$ -- 0
-write$ -- 20
+write$ -- 80
 (There were 2 error messages)
