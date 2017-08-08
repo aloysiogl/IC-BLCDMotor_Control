@@ -13,10 +13,28 @@
 #define M3D 9
 
 //Variable for speed
-int speed;
+volatile int speed;
 
 //Variable for counting pulses
 volatile unsigned long pulses = 0;
+
+//Double desired speed
+double desiredSpeed = 100;
+
+//Control variables
+volatile unsigned long pulsosAtual = 0;
+volatile unsigned long pulsosAnterior= 0;
+volatile double UAtual = 0;
+volatile double UAnterior = 0;
+volatile double erroAtual = desiredSpeed;
+volatile double erroAnterior = 0;
+
+//Constants
+double Ki = 104.55;
+double Kp = 2.8522;
+
+//Delta t
+double dt = 0.05;
 
 void setup() {
   //Setting up pins
@@ -44,7 +62,7 @@ void setup() {
   attachInterrupt(digitalPinToInterrupt(H3), commute, CHANGE);
 
   //Timer interrupt
-  Timer1.initialize(500000);
+  Timer1.initialize(50000);
   Timer1.attachInterrupt(control);
 
   //Serial communication initialization for debug and message parsing
@@ -60,7 +78,14 @@ void loop() {
 
 //Control interrupt
 void control(){
+  pulsosAnterior = pulsosAtual;
+  pulsosAtual = pulses;
+  erroAnterior = erroAtual; 
+  erroAtual = (pulsosAtual-pulsosAnterior)/dt - desiredSpeed;
 
+  UAtual = UAnterior + Kp*erroAtual + Ki*dt*erroAtual/2+Ki*dt*erroAnterior/2;
+
+  speed = (int)UAtual*6.7/255;
 }
 
 //Intterupt function for commutation
