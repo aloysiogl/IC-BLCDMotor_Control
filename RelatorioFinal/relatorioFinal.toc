@@ -18,10 +18,10 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.4}Simula\IeC {\c c}\IeC {\~a}o do modelo}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5}An\IeC {\'a}lise do resultados no motor Maxon 45fl-200142}{9}
+\contentsline {subsection}{\numberline {4.5}Disposi\IeC {\c c}\IeC {\~o}es finais}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Conclus\IeC {\~a}o}{9}
+\contentsline {section}{\numberline {5}Conclus\IeC {\~a}o}{11}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Agradecimentos}{9}
+\contentsline {section}{\numberline {6}Agradecimentos}{12}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Bibliografia}{9}
+\contentsline {section}{\numberline {7}Bibliografia}{12}

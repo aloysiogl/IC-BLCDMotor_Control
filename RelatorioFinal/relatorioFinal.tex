@@ -215,10 +215,78 @@
 		
 		\subsection{Simulação do modelo}
 		
-		Foi implementada em MATLAB\cite{MATLAB} a função de transferência \ref{plantamotor} e, com isso, foi possível obter os gráficos para a resposta em degrau do sistema, bem como o diagrama de Bode. As figuras \ref{respostaemdegrau} e \ref{bode}, respectivamente, representam a resposta em degrau unitário e o diagrama de Bode da planta obtidos.
+		Foi implementada em MATLAB\cite{MATLAB} a função de transferência \ref{plantamotor} e, com isso, foi possível obter os gráficos para a resposta em degrau do sistema, bem como o diagrama de Bode. As figuras \ref{fig:respostaemdegrau} e \ref{fig:bode}, respectivamente, representam a resposta em degrau unitário e o diagrama de Bode da planta obtidos.
 		
-		\subsection{Análise do resultados no motor Maxon 45fl-200142}
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[width=0.64\linewidth]{images/stepResponse}
+			\caption{Análise da resposta à um degrau unitário da planta \ref{plantamotor}.}
+			\label{fig:respostaemdegrau}
+		\end{figure}
+	
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[width=0.64\linewidth]{images/bode}
+			\caption{Diagrama de bode para a planta \ref{plantamotor}.}
+			\label{fig:bode}
+		\end{figure}
+		
+		\newpage
+		
+		Foi utilizado um controlador PI (proporcional e integral); esta escolha se deve ao fato de que o termo integral do controlador elimina os erros em regime. Ademais, o controle de posição não exige tempo de resposta elevado (como seria o caso de um controlador PD). A função de transferência em tempo contínuo para o controlador PI pode ser vista em \ref{tfcontroladorct}.
+		
+		\begin{equation}
+			\frac{\varepsilon(s)}{\epsilon(s)}= Kp + \frac{Ki}{s}
+		\end{equation}
+		
+		Foi realizada uma otimização com auxílio da ferramenta de PI tinning, presente no MATLAB. Buscou-se obter um pequeno overshoot e cerca de 0.001 segundo até atingir o estado estacionário. As constantes foram obtidas: Kp = 2.8522 e 104.55. Após isso, foi gerando o gráfico \ref{fig:saidasimulada} para a saída em velocidade angular do sistema mostrado em \ref{fig:sistemasimulink}.
+		
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[width=0.9\linewidth]{images/sistemaEControlador}
+			\caption{Sistema completo modelado com auxílio do SIMULINK\cite{MATLAB}.}
+			\label{fig:sistemasimulink}
+		\end{figure}
+	
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[width=0.7\linewidth]{images/sistemStep}
+			\caption{Saída de $\dot{\theta}(t)$ fixado em 100rad/s}
+			\label{fig:saidasimulada}
+		\end{figure}
+		
+		Após a discretização, utilizando o método de Tustin, foi possível chegar à função de transferência discreta \ref{tfdiscreta}, a qual possibilitou a implementação do controle seguindo a relação de recorrência mostrada em \ref{recorrencia}.
+		
+		\begin{equation}
+			\frac{\varepsilon(z)}{\epsilon(z)}= Kp + \frac{Ki T}{2}\frac{z+1}{z-1} \label{tfdiscreta}
+		\end{equation}
+			
+		\begin{equation}
+			\varepsilon[z] = \varepsilon[z-1] + Kp\cdot\epsilon[z] - Kp\cdot\epsilon[z-1] - \frac{Ki T}{2}(\epsilon[z] + \epsilon[z-1])
+		\end{equation}
+		
+		\subsection{Disposições finais}
+		
+		Após a implementação do algorítimo, observou-se que o motor era capaz de atingir a velocidade de 99.2 radianos por segundo, o que mostra que o modelo se adéqua aos parâmetros físicos do sistema.
+		
+		Além disso, o quatro motores foi posicionados junto ao primeiro protótipo do robô Small Size como mostrado em \ref{fig:smallfoto}.
+		
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[width=0.7\linewidth]{images/smallfoto}
+			\caption{Fotografia do robô Small Size com quatro motores.}
+			\label{fig:smallfoto}
+		\end{figure}
+		
 	\section{Conclusão}
+	
+	Foi possível, por meio deste projeto de iniciação científica compreender os detalhes técnicos a respeito do controle de motores elétricos BLDC, bem como aprender os conceitos básicos de controle necessários ao desenvolvimento de um controlador PI.
+	
+	Com isso, implementou-se um controlador para o motor Brushless Maxon 45fl-200142, utilizado na categoria Small Size. Foi possível obter a função de transferência que descreve o motor, o que será útil para outras futuras simulações na ITAndroids. Além disso, foi possível realizar a simulação do comportamento do motor isolado e do sistema completo junto com o controlador.
+	
+	O conhecimento aqui adquirido será propagado na iniciativa ITAndroids e servirá de base para a categoria recém fundada Small Size. Vale ressaltar que a a participação nessa categoria será benéfica para a imagem do ITA no panorama internacional.
+	
+	Ressalta-se, por fim, que ainda restam muitos testes a serem realizados no motor. Além disso, a implementação no hardware eletrônico final será feita até outubro, tendo em vista que espera-se que a placa eletrônica final já tenha sido confeccionada até esta data.  A tabela de comutação já está montada e serão mantidos o mesmo modelo físico e o mesmo controlador, bastando apenas adaptar o código para linguagem VHDL.
 	
 	\section{Agradecimentos}
 	Agradeço ao CNPQ, pelo apoio financeiro durante a realização do projeto, bem como ao meu professor orientador pelo apoio à realização do projeto. Agradeço à iniciativa ITAndroids, por fornecer os treinamentos necessários e recursos materiais para a realização do projeto.
