@@ -23,7 +23,6 @@ void setup() {
   pinMode(H1,INPUT);
   pinMode(H2,INPUT);
   pinMode(H3,INPUT);
-  pinMode(PWM_PIN,OUTPUT);
   pinMode(M1U, OUTPUT);
   pinMode(M1D, OUTPUT);
   pinMode(M2U, OUTPUT);
@@ -38,7 +37,6 @@ void setup() {
   digitalWrite(M2D,LOW);
   digitalWrite(M3U,LOW);
   digitalWrite(M3D,LOW);
-  analogWrite(PWM_PIN,0);
 
   //Attaching interruptions for the commutation
   attachInterrupt(digitalPinToInterrupt(H1), commute, CHANGE);
