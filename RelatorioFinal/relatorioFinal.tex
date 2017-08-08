@@ -113,9 +113,9 @@
 		
 		A ITAndroids acredita que o hardware é fundamental no desenvolvimento de qualquer projeto de robótica, por isso, recentemente tem-se investido bastante no desenvolvimento dessa área. O desenvolvimento de conhecimento na área de controle de motores elétricos, assim, torna-se fundamental para a melhoria técnica da iniciativa.
 		
-		Nesse sentido, abre-se caminho para a participação na categoria Small Size, a qual necessita de uma eletrônica mais desenvolvida o que implica diretamente o desenvolvimento de conhecimento sobre controle de motores. Os motores utilizados para a locomoção dos robôs são motores Brushless, essa escolha se justifica pelo fato de que motores Brushless são mais eficientes, ocupam menos espaço e apresentam desgaste muito menor que motores DC tradicionais.
+		Nesse sentido, abre-se caminho para a participação na categoria Small Size, a qual necessita de uma eletrônica mais desenvolvida o que implica diretamente no desenvolvimento de conhecimento sobre controle de motores. Os motores utilizados para a locomoção dos robôs são motores Brushless, essa escolha se justifica pelo fato de que motores Brushless são mais eficientes, ocupam menos espaço e apresentam desgaste muito menor que motores DC tradicionais.
 		
-		Uma vez que o desgaste mecânico durante as partidas de futebol de robôs Small Size é elevado e é preciso alto rendimento dos sistemas mecânicos os motores BLDC são a escolha ideal; além disso, as principais equipes internacionais, tal como a equipe tailandesa SKUBA \cite{skuba} fazem uso de desses motores. Em contrapartida, o controle deste tipo de atuador mecânico se dá de maneira mais complexa uma vez que a comutação do campo magnético não é feita mecanicamente por escovas. A figura \ref{fig:esquemamotor}, abaixo, ilustra a mecânica de um motor BLDC.
+		Uma vez que o desgaste mecânico durante as partidas de futebol de robôs Small Size é elevado e é preciso alto rendimento dos sistemas mecânicos os motores BLDC são a escolha ideal; além disso, as principais equipes internacionais, tal como a equipe tailandesa SKUBA\cite{skuba} fazem uso de desses motores. Em contrapartida, o controle deste tipo de atuador mecânico se dá de maneira mais complexa, uma vez que a comutação do campo magnético não é feita mecanicamente por escovas. A figura \ref{fig:esquemamotor}, abaixo, ilustra a mecânica de um motor BLDC.
 		
 		\begin{figure}[ht]
 			\centering
@@ -127,16 +127,16 @@
 		
 		O controle da comutação do campo magnético para esse tipo de motor é feito eletronicamente, o que acarreta a necessidade de um dispositivo eletrônico tal como um microcontrolador \cite{introducaobldc}. Isso aumenta a complexidade do sistema de locomoção como um todo, no entanto traz diversos ganhos em eficiência para o projeto.
 		
-		Nesse sentido o objetivo principal deste trabalho é compreender o funcionamento de um motor elétrico Brushless e ser capaz de realizar a comutação eletronicamente. Adicionalmente, deseja-se modelar o motor, simular e implementar um controlador PI para um motor Maxon 45fl-200142, o qual é utilizado para a locomoção de um robô Small Size.
+		Nesse sentido, o objetivo principal deste trabalho é compreender o funcionamento de um motor elétrico Brushless e ser capaz de realizar a comutação eletronicamente. Adicionalmente, deseja-se modelar o motor, simular e implementar um controlador PI para um motor Maxon 45fl-200142, o qual é utilizado para a locomoção de um robô Small Size.
 	
 	\section{Resultados}
 		\subsection{Funcionamento de um motor elétrico Brushless}
 		
 		Um motor elétrico Brushless têm várias possíveis configurações, no entanto, a configuração trifásica ganha destaque. Isso pode ser constatado pela grande fabricação desse tipo de motor BLDC.
 		
-		Neste trabalho de iniciação científica é desenvolvido o controle de um motor da fabricante Maxon trifásico. Isso significa que existem três fases diferentes que devem ser eletronicamente comutadas para que se obtenha a rotação do motor. Além disso, o ciclo de rotação do motor é composto de seis etapas distintas, portanto o motor rotaciona com uma comutação de seis passos. Há apenas uma sequência correta de seis combinações das fases do motor para cada sentido de rotação.
+		Neste trabalho de iniciação científica, é desenvolvido o controle de um motor da fabricante Maxon trifásico. Isso significa que existem três fases diferentes que devem ser eletronicamente comutadas para que se obtenha a rotação do motor. Além disso, o ciclo de rotação do motor é composto de seis etapas distintas, portanto o motor rotaciona com uma comutação de seis passos. Há apenas uma sequência correta de seis combinações das fases do motor para cada sentido de rotação.
 		
-		Vale destacar, também, que cada fase corresponde a uma bobina do motor e que estas bobinas estão interligadas. Assim, cada passo corresponde a aplicar tensão entre dois terminais de duas bobinas. As bobinas podem estar distribuídas ao redor da carcaça do motor, o que faz que uma rotação mecânica completa não seja equivalente a um ciclo elétrico. No caso do motor estudado, são necessárias 48 comutações para que uma revolução completa seja atingida; isso, portanto, significa que a cada oito ciclos elétricos ocorre um ciclo mecânico no motor. A figura \ref{fig:comutacao} abaixo ilustra a comutação de fases em um motor BLDC.
+		Vale destacar, também, que cada fase corresponde a uma bobina do motor e que estas bobinas estão interligadas. Assim, cada passo corresponde a aplicar tensão entre dois terminais de duas bobinas. As bobinas podem estar distribuídas ao redor da carcaça do motor, o que faz que uma rotação mecânica completa não seja equivalente a um ciclo elétrico. No caso do motor estudado, são necessárias 48 comutações para que uma revolução completa seja atingida; isso, portanto, significa que a cada oito ciclos elétricos ocorre um ciclo mecânico no motor. A figura \ref{fig:comutacao}, abaixo, ilustra a comutação de fases em um motor BLDC.
 		
 		\begin{figure}[ht]
 			\centering
@@ -150,21 +150,21 @@
 		
 		\subsection{Modelo utilizado no estudo}
 		
-		O modelo matemático utilizado no estudo do motor BLDC é o mesmo modelo utilizado para um motor DC convencional, o qual é uma boa aproximação para o modelo estudado \cite{modelomotor}. Considera-se que o torque produzido pelo motor é proporcional à corrente como mostrado em \ref{torquemotor} e que a tensão no motor é proporcional à velocidade angular $\dot{\theta}$, como mostrado em \ref{tensaomotor}.
+		O modelo matemático utilizado no estudo do motor BLDC é o mesmo modelo utilizado para um motor DC convencional, o qual é uma boa aproximação para o modelo estudado (referência \cite{modelomotor}). Considera-se que o torque produzido pelo motor é proporcional à corrente como mostrado em \ref{torquemotor} e que a tensão no motor é proporcional à velocidade angular $\dot{\theta}$, como mostrado em \ref{tensaomotor}.
 		
 		\begin{align}
 			\tau = K_ti \label{torquemotor}\\
 			V = K_b\dot{\theta} \label{tensaomotor}
 		\end{align}
 		
-		Considerando, ainda, o momento de inércia do motor $J$ e que existe um atrito viscoso $b\dot{\theta}$, pela terceira lei de Newton, chega-se a \ref{leidenewtonmotor}. Utilizando a lei das malhas e considerando a queda de tensão devido à resistência do motor, à sua indutância e à conversão da energia em energia mecânica, sendo $\varepsilon$ a tensão da fonte, chega-se a \ref{malhasmotor}.
+		Considerando, ainda, o momento de inércia do motor $J$ e que existe um atrito viscoso $b\dot{\theta}$, pela terceira lei de Newton, chega-se a \ref{leidenewtonmotor}. Utilizando a lei das malhas e considerando a queda de tensão devido à resistência do motor, à sua indutância e à conversão da energia em energia mecânica, sendo $\varepsilon$ a tensão da fonte, chega-se à \ref{malhasmotor}.
 		
 		\begin{align}
 			J\ddot{\theta} = K_ti - b\dot{\theta} \label{leidenewtonmotor}\\
 			\varepsilon = K_b\dot{\theta} + L\frac{di}{dt} + Ri \label{malhasmotor}
 		\end{align}
 		
-		Pode-se, associando as equações \ref{leidenewtonmotor} e \ref{malhasmotor} chegar à função de transferência do motor, mostrada abaixo em \ref{plantamotor}. Observa-se que foram utilizados os dados fornecidos no pelo fabricante e foram desconsiderados os termos do atrito viscoso, pois eram negligenciáveis.
+		Pode-se, associando as equações \ref{leidenewtonmotor} e \ref{malhasmotor} chegar à função de transferência do motor, mostrada abaixo em \ref{plantamotor}. Observa-se que foram utilizados os dados fornecidos pelo fabricante e foram desconsiderados os termos do atrito viscoso, pois eram negligenciáveis.
 		
 		\begin{equation}
 			\frac{\dot{\Theta(s)}}{\varepsilon(s)} = \frac{13.095}{2.66 \cdot 10^{-6} s^2+0.0171s+1} \label{plantamotor}
@@ -181,9 +181,9 @@
 			\label{fig:diagrama}
 		\end{figure}
 	
-		Foram utilizados seis pares darlington TIP 122 para montar o esquema mostrado acima de três meias pontes H e uma placa de desenvolvimento Arduino Mega ADK para o controle. O sistema inicialmente foi testado com um motor Brushless retirado de um drive de DVD em loop aberto. Observou-se que sem um feedback dos sensores a velocidade máxima atingida pelo motor era muito pequena e a rotação não se dava de maneira suave. Isso mostra que sem informações sobre a posição do rotor o rotor facilmente não é capaz de acompanhas a variação do campo magnético.
+		Foram utilizados seis pares darlington TIP 122 para montar o esquema mostrado acima de três meias pontes H e uma placa de desenvolvimento Arduino Mega ADK para o controle. O sistema inicialmente foi testado com um motor Brushless retirado de um drive de DVD em loop aberto. Observou-se que sem um feedback dos sensores a velocidade máxima atingida pelo motor era muito pequena e a rotação não se dava de maneira suave. Isso mostra que sem informações sobre a posição do rotor, este facilmente não é capaz de acompanhar a variação do campo magnético.
 		
-		Abaixo, é mostrada na figura \ref{fig:montagemcircuito} a montagem do circuito para o controle do motor. Na figura \ref{fig:motorantigo} é mostrado o motor de drive de DVD utilizado inicialmente.
+		Abaixo, é mostrada na figura \ref{fig:montagemcircuito} a montagem do circuito para o controle do motor. Na figura \ref{fig:motorantigo}, é mostrado o motor de drive de DVD utilizado inicialmente.
 		
 		\begin{figure}[ht]
 			\centering
@@ -195,7 +195,7 @@
 		\begin{figure}[ht]
 			\centering
 			\includegraphics[width=0.5\linewidth]{images/motorantigo}
-			\caption{Motor de drive de DVD utilizado nos teste, nota-se que não há saídas para sensores de efeito hall.}
+			\caption{Motor de drive de DVD utilizado nos testes, nota-se que não há saídas para sensores de efeito hall.}
 			\label{fig:motorantigo}
 		\end{figure}
 	
@@ -215,7 +215,7 @@
 		
 		\subsection{Simulação do modelo}
 		
-		Foi implementada em MATLAB\cite{MATLAB} a função de transferência \ref{plantamotor} e, com isso, foi possível obter os gráficos para a resposta em degrau do sistema, bem como o diagrama de Bode. As figuras \ref{fig:respostaemdegrau} e \ref{fig:bode}, respectivamente, representam a resposta em degrau unitário e o diagrama de Bode da planta obtidos.
+		Foi implementada em MATLAB\cite{MATLAB} a função de transferência \ref{plantamotor} e, com isso, foi possível obter o gráfico para a resposta em degrau do sistema, bem como o diagrama de Bode. As figuras \ref{fig:respostaemdegrau} e \ref{fig:bode}, respectivamente, representam a resposta em degrau unitário e o diagrama de Bode da planta obtidos.
 		
 		\begin{figure}[ht]
 			\centering
@@ -236,10 +236,10 @@
 		Foi utilizado um controlador PI (proporcional e integral); esta escolha se deve ao fato de que o termo integral do controlador elimina os erros em regime. Ademais, o controle de posição não exige tempo de resposta elevado (como seria o caso de um controlador PD). A função de transferência em tempo contínuo para o controlador PI pode ser vista em \ref{tfcontroladorct}.
 		
 		\begin{equation}
-			\frac{\varepsilon(s)}{\epsilon(s)}= Kp + \frac{Ki}{s}
+			\frac{\varepsilon(s)}{\epsilon(s)}= Kp + \frac{Ki}{s} \label{tfcontroladorct}
 		\end{equation}
 		
-		Foi realizada uma otimização com auxílio da ferramenta de PI tinning, presente no MATLAB. Buscou-se obter um pequeno overshoot e cerca de 0.001 segundo até atingir o estado estacionário. As constantes foram obtidas: Kp = 2.8522 e 104.55. Após isso, foi gerando o gráfico \ref{fig:saidasimulada} para a saída em velocidade angular do sistema mostrado em \ref{fig:sistemasimulink}.
+		Foi realizada uma otimização com auxílio da ferramenta de PI tunning, presente no MATLAB. Buscou-se obter um pequeno overshoot e cerca de 0.001 segundo até atingir o estado estacionário. As constantes obtidas foram: Kp = 2.8522 e Ki = 104.55. Após isso, foi gerado o gráfico \ref{fig:saidasimulada} para a saída em velocidade angular do sistema mostrado em \ref{fig:sistemasimulink}.
 		
 		\begin{figure}[ht]
 			\centering
@@ -262,14 +262,14 @@
 		\end{equation}
 			
 		\begin{equation}
-			\varepsilon[z] = \varepsilon[z-1] + Kp\cdot\epsilon[z] - Kp\cdot\epsilon[z-1] - \frac{Ki T}{2}(\epsilon[z] + \epsilon[z-1])
+			\varepsilon[z] = \varepsilon[z-1] + Kp\cdot\epsilon[z] - Kp\cdot\epsilon[z-1] - \frac{Ki T}{2}(\epsilon[z] + \epsilon[z-1]) \label{recorrencia}
 		\end{equation}
 		
 		\subsection{Disposições finais}
 		
 		Após a implementação do algorítimo, observou-se que o motor era capaz de atingir a velocidade de 99.2 radianos por segundo, o que mostra que o modelo se adéqua aos parâmetros físicos do sistema.
 		
-		Além disso, o quatro motores foi posicionados junto ao primeiro protótipo do robô Small Size como mostrado em \ref{fig:smallfoto}.
+		Além disso, os quatro motores foram posicionados na carcaça do primeiro protótipo do robô Small Size como mostrado em \ref{fig:smallfoto}.
 		
 		\begin{figure}[ht]
 			\centering
@@ -280,13 +280,13 @@
 		
 	\section{Conclusão}
 	
-	Foi possível, por meio deste projeto de iniciação científica compreender os detalhes técnicos a respeito do controle de motores elétricos BLDC, bem como aprender os conceitos básicos de controle necessários ao desenvolvimento de um controlador PI.
+	Foi possível, por meio deste projeto de iniciação científica, compreender os detalhes técnicos a respeito do controle de motores elétricos BLDC, bem como aprender os conceitos básicos de controle necessários ao desenvolvimento de um controlador PI.
 	
 	Com isso, implementou-se um controlador para o motor Brushless Maxon 45fl-200142, utilizado na categoria Small Size. Foi possível obter a função de transferência que descreve o motor, o que será útil para outras futuras simulações na ITAndroids. Além disso, foi possível realizar a simulação do comportamento do motor isolado e do sistema completo junto com o controlador.
 	
 	O conhecimento aqui adquirido será propagado na iniciativa ITAndroids e servirá de base para a categoria recém fundada Small Size. Vale ressaltar que a a participação nessa categoria será benéfica para a imagem do ITA no panorama internacional.
 	
-	Ressalta-se, por fim, que ainda restam muitos testes a serem realizados no motor. Além disso, a implementação no hardware eletrônico final será feita até outubro, tendo em vista que espera-se que a placa eletrônica final já tenha sido confeccionada até esta data.  A tabela de comutação já está montada e serão mantidos o mesmo modelo físico e o mesmo controlador, bastando apenas adaptar o código para linguagem VHDL.
+	Ressalta-se, por fim, que ainda restam muitos testes a serem realizados no motor. Além disso, a implementação no hardware eletrônico final será feita até outubro, tendo em vista que espera-se que a placa eletrônica final já tenha sido confeccionada e testada até esta data.  A tabela de comutação já está montada e serão mantidos o mesmo modelo físico e o mesmo controlador, bastando apenas adaptar o código para linguagem VHDL.
 	
 	\section{Agradecimentos}
 	Agradeço ao CNPQ, pelo apoio financeiro durante a realização do projeto, bem como ao meu professor orientador pelo apoio à realização do projeto. Agradeço à iniciativa ITAndroids, por fornecer os treinamentos necessários e recursos materiais para a realização do projeto.
