@@ -79,6 +79,35 @@
   \field{journaltitle}{Microchip Technology Inc.}
 \endentry
 
+\entry{modelomotor}{thesis}{}
+  \name{author}{1}{}{%
+    {{}%
+     {Baldursson}{B.}%
+     {Stefán}{S.}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{BS1}
+  \strng{fullhash}{BS1}
+  \field{title}{BLDC Motor Modelling and Control – A Matlab ® /Simulink ®
+  Implementation}
+  \list{institution}{1}{%
+    {Institutionen för Energi och Miljö}%
+  }
+  \field{type}{Master Thesis}
+  \field{year}{2005}
+\endentry
+
+\entry{atmeldiagrama}{report}{}
+  \field{title}{AVR194: Brushless DC Motor Control using ATmega32M1}
+  \list{institution}{1}{%
+    {Atmel}%
+  }
+  \field{type}{Application Note}
+  \warn{\item Invalid format of field 'date' \item Invalid format of field
+  'date'}
+\endentry
+
 \lossort
 \endlossort
 

@@ -12,16 +12,16 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.1}Funcionamento de um motor el\IeC {\'e}trico Brushless}{5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2}Modelo utilizado no estudo}{5}
+\contentsline {subsection}{\numberline {4.2}Modelo utilizado no estudo}{6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3}Hardware confeccionado para acionamento do motor}{5}
+\contentsline {subsection}{\numberline {4.3}Hardware confeccionado para acionamento do motor}{7}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4}Simula\IeC {\c c}\IeC {\~a}o do modelo}{5}
+\contentsline {subsection}{\numberline {4.4}Simula\IeC {\c c}\IeC {\~a}o do modelo}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5}An\IeC {\'a}lise do resultados no motor Maxon 45fl-200142}{5}
+\contentsline {subsection}{\numberline {4.5}An\IeC {\'a}lise do resultados no motor Maxon 45fl-200142}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Conclus\IeC {\~a}o}{5}
+\contentsline {section}{\numberline {5}Conclus\IeC {\~a}o}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Agradecimentos}{5}
+\contentsline {section}{\numberline {6}Agradecimentos}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Bibliografia}{5}
+\contentsline {section}{\numberline {7}Bibliografia}{8}

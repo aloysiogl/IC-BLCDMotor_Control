@@ -31,7 +31,7 @@
 
 \title{\textbf{Controle de motor elétrico Brushless para robô jogador de futebol Small Size}}
 
-\author{Aloysio Galvão Lopes, Carlos Eguti\\
+\author{Aloysio Galvão Lopes, Prof. Dr. Carlos César Aparecido Eguti\\
 	Instituto Tecnológico de Aeronáutica\\
 	São José dos Campos, SP, Brasil} %\\
 
@@ -104,8 +104,8 @@
 		\textbf{(jun/jul)}
 		\begin{itemize}
 			\item Adaptação do hardware para o teste de controle do motor Maxon 45fl-200142, utilizado no robô Small Size e realização de seu controle com o auxílio dos sensores de efeito hall, bem como integração inicial à estrutura mecânica do robô.
-			\item Modelagem do motor, desenvolvimento de um controlador PID e posterior simulação por meio do software MATLAB \cite{MATLAB}.
-			\item Implementação do controlador PID em C++ para teste no motor e coleta dos resultados finais do projeto.
+			\item Modelagem do motor, desenvolvimento de um controlador PI e posterior simulação por meio do software MATLAB \cite{MATLAB}.
+			\item Implementação do controlador PI em C++ para teste no motor e coleta dos resultados finais do projeto.
 			\item Confecção do relatório final.
 		\end{itemize}
 	\section{Descrição do Problema}
@@ -127,14 +127,82 @@
 		
 		O controle da comutação do campo magnético para esse tipo de motor é feito eletronicamente, o que acarreta a necessidade de um dispositivo eletrônico tal como um microcontrolador \cite{introducaobldc}. Isso aumenta a complexidade do sistema de locomoção como um todo, no entanto traz diversos ganhos em eficiência para o projeto.
 		
-		Nesse sentido o objetivo principal deste trabalho é compreender o funcionamento de um motor elétrico Brushless e ser capaz de realizar a comutação eletronicamente. Adicionalmente, deseja-se modelar o motor, simular e implementar um controlador PID para um motor Maxon 45fl-200142, o qual é utilizado para a locomoção de um robô Small Size.
+		Nesse sentido o objetivo principal deste trabalho é compreender o funcionamento de um motor elétrico Brushless e ser capaz de realizar a comutação eletronicamente. Adicionalmente, deseja-se modelar o motor, simular e implementar um controlador PI para um motor Maxon 45fl-200142, o qual é utilizado para a locomoção de um robô Small Size.
 	
 	\section{Resultados}
 		\subsection{Funcionamento de um motor elétrico Brushless}
 		
+		Um motor elétrico Brushless têm várias possíveis configurações, no entanto, a configuração trifásica ganha destaque. Isso pode ser constatado pela grande fabricação desse tipo de motor BLDC.
+		
+		Neste trabalho de iniciação científica é desenvolvido o controle de um motor da fabricante Maxon trifásico. Isso significa que existem três fases diferentes que devem ser eletronicamente comutadas para que se obtenha a rotação do motor. Além disso, o ciclo de rotação do motor é composto de seis etapas distintas, portanto o motor rotaciona com uma comutação de seis passos. Há apenas uma sequência correta de seis combinações das fases do motor para cada sentido de rotação.
+		
+		Vale destacar, também, que cada fase corresponde a uma bobina do motor e que estas bobinas estão interligadas. Assim, cada passo corresponde a aplicar tensão entre dois terminais de duas bobinas. As bobinas podem estar distribuídas ao redor da carcaça do motor, o que faz que uma rotação mecânica completa não seja equivalente a um ciclo elétrico. No caso do motor estudado, são necessárias 48 comutações para que uma revolução completa seja atingida; isso, portanto, significa que a cada oito ciclos elétricos ocorre um ciclo mecânico no motor. A figura \ref{fig:comutacao} abaixo ilustra a comutação de fases em um motor BLDC.
+		
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[width=0.7\linewidth]{images/comutacao}
+			\caption{Três fases de um motor comutando \cite{introducaobldc}.}
+			\label{fig:comutacao}
+		\end{figure}
+		
+		
+		Adicionalmente, é comum haver três sensores de efeito hall (é o caso deste motor), para que seja possível controlar a comutação. A combinação das três saídas de cada um dos sensores de efeito hall dá a próxima comutação a partir da tabela de comutação do motor.
+		
 		\subsection{Modelo utilizado no estudo}
 		
+		O modelo matemático utilizado no estudo do motor BLDC é o mesmo modelo utilizado para um motor DC convencional, o qual é uma boa aproximação para o modelo estudado \cite{modelomotor}. Considera-se que o torque produzido pelo motor é proporcional à corrente como mostrado em \ref{torquemotor} e que a tensão no motor é proporcional à velocidade angular $\dot{\theta}$, como mostrado em \ref{tensaomotor}.
+		
+		\begin{align}
+			\tau = K_ti \label{torquemotor}\\
+			V = K_b\dot{\theta} \label{tensaomotor}
+		\end{align}
+		
+		Considerando, ainda, o momento de inércia do motor $J$ e que existe um atrito viscoso $b\dot{\theta}$, pela terceira lei de Newton, chega-se a \ref{leidenewtonmotor}. Utilizando a lei das malhas e considerando a queda de tensão devido à resistência do motor, à sua indutância e à conversão da energia em energia mecânica, sendo $\varepsilon$ a tensão da fonte, chega-se a \ref{malhasmotor}.
+		
+		\begin{align}
+			J\ddot{\theta} = K_ti - b\dot{\theta} \label{leidenewtonmotor}\\
+			\varepsilon = K_b\dot{\theta} + L\frac{di}{dt} + Ri \label{malhasmotor}
+		\end{align}
+		
+		Pode-se, associando as equações \ref{leidenewtonmotor} e \ref{malhasmotor} chegar à função de transferência do motor, mostrada abaixo em \ref{plantamotor}. Observa-se que foram utilizados os dados fornecidos no pelo fabricante e foram desconsiderados os termos do atrito viscoso, pois eram negligenciáveis.
+		
+		\begin{equation}
+			\frac{\dot{\Theta(s)}}{\varepsilon(s)} = \frac{13.095}{2.66 \cdot 10^{-6} s^2+0.0171s+1} \label{plantamotor}
+		\end{equation}
+		
 		\subsection{Hardware confeccionado para acionamento do motor}
+		
+		Foi confeccionado um hardware para acionamento do motor baseado no esquema mostrado abaixo, na figura \ref{fig:diagrama}.
+		
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[width=0.7\linewidth]{images/circuitdiagram}
+			\caption{Diagrama do circuito para acionamento do motor \cite{atmeldiagrama}.}
+			\label{fig:diagrama}
+		\end{figure}
+	
+		Foram utilizados seis pares darlington TIP 122 para montar o esquema mostrado acima de três meias pontes H e uma placa de desenvolvimento Arduino Mega ADK para o controle. O sistema inicialmente foi testado com um motor Brushless retirado de um drive de DVD em loop aberto. Observou-se que sem um feedback dos sensores a velocidade máxima atingida pelo motor era muito pequena e a rotação não se dava de maneira suave. Isso mostra que sem informações sobre a posição do rotor o rotor facilmente não é capaz de acompanhas a variação do campo magnético.
+		
+		Abaixo, é mostrada na figura \ref{fig:montagemcircuito} a montagem do circuito para o controle do motor. Na figura \ref{fig:motorantigo} é mostrado o motor de drive de DVD utilizado inicialmente.
+		
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[width=0.5\linewidth]{images/montagemcircuito}
+			\caption{Figura da montagem do circuito para controle do motor.}
+			\label{fig:montagemcircuito}
+		\end{figure}
+		
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[width=0.5\linewidth]{images/motorantigo}
+			\caption{Motor de drive de DVD utilizado nos teste, nota-se que não há saídas para sensores de efeito hall.}
+			\label{fig:motorantigo}
+		\end{figure}
+	
+		\newpage
+		
+		Em uma segunda etapa, utilizou-se o motor Maxon 45fl-200142, cujo controle é o objetivo deste estudo. Nesse caso, foi possível utilizar o feedback dos sensores de efeito hall e obter uma rotação suave, além disso, foi desenvolvido um script para a obtenção da tabela de comutação, uma vez que esta não é fornecida pelo fabricante. Este script pode ser posteriormente utilizado para a obtenção da tabela de comutação de qualquer motor Brushless. Vale ressaltar que a regulação da velocidade aqui é feita utilizando PWM.
+		
 		
 		\subsection{Simulação do modelo}
 		
