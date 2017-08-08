@@ -5,8 +5,8 @@
 #define H3 18
 #define M1U 4
 #define M1D 5
-#define M2U 6
-#define M2D 7
+#define M2U 7
+#define M2D 6
 #define M3U 8
 #define M3D 9
 

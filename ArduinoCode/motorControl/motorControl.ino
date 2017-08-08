@@ -16,7 +16,7 @@
 int speed;
 
 //Variable for counting pulses
-volatile unsigned long pulses = 0; 
+volatile unsigned long pulses = 0;
 
 void setup() {
   //Setting up pins
@@ -60,7 +60,7 @@ void loop() {
 
 //Control interrupt
 void control(){
-  
+
 }
 
 //Intterupt function for commutation
@@ -185,5 +185,3 @@ void commuteI(){
     digitalWrite(M3D,LOW);
   }
 }
-
-
