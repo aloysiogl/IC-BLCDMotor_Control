@@ -201,10 +201,21 @@
 	
 		\newpage
 		
-		Em uma segunda etapa, utilizou-se o motor Maxon 45fl-200142, cujo controle é o objetivo deste estudo. Nesse caso, foi possível utilizar o feedback dos sensores de efeito hall e obter uma rotação suave, além disso, foi desenvolvido um script para a obtenção da tabela de comutação, uma vez que esta não é fornecida pelo fabricante. Este script pode ser posteriormente utilizado para a obtenção da tabela de comutação de qualquer motor Brushless. Vale ressaltar que a regulação da velocidade aqui é feita utilizando PWM.
+		Em uma segunda etapa, utilizou-se o motor Maxon 45fl-200142, cujo controle é o objetivo deste estudo. Nesse caso, foi possível utilizar o feedback dos sensores de efeito hall e obter uma rotação suave, além disso, foi desenvolvido um script para a obtenção da tabela de comutação, uma vez que esta não é fornecida pelo fabricante. Este script pode ser posteriormente utilizado para a obtenção da tabela de comutação de qualquer motor Brushless. Vale ressaltar que a regulação da velocidade aqui é feita utilizando PWM. Para isso uma saída PWM é gerada para cada transístor que leva corrente do motor ao ground, seguindo o esquema mostrado em \ref{fig:esquemamotor}.
+		A figura \ref{fig:motornovo}, abaixo, mostra o motor da Maxon rotacionando. Mais adiante serão tratados os aspectos de controle implementados.
 		
+		\begin{figure}[ht]
+			\centering
+			\includegraphics[width=0.5\linewidth]{images/motornovo}
+			\caption{Motor Maxon 45fl-200142 rotacionando.}
+			\label{fig:motornovo}
+		\end{figure}
+	
+		\newpage
 		
 		\subsection{Simulação do modelo}
+		
+		Foi implementada em MATLAB\cite{MATLAB} a função de transferência \ref{plantamotor} e, com isso, foi possível obter os gráficos para a resposta em degrau do sistema, bem como o diagrama de Bode. As figuras \ref{respostaemdegrau} e \ref{bode}, respectivamente, representam a resposta em degrau unitário e o diagrama de Bode da planta obtidos.
 		
 		\subsection{Análise do resultados no motor Maxon 45fl-200142}
 	\section{Conclusão}
