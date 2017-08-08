@@ -108,6 +108,27 @@
   'date'}
 \endentry
 
+\entry{mainmodel}{article}{}
+  \name{author}{2}{}{%
+    {{}%
+     {Patel}{P.}%
+     {Vinod KR~Singh}{V.~K.~S.}%
+     {}{}%
+     {}{}}%
+    {{}%
+     {A.K.Pandey}{A.}%
+     {}{}%
+     {}{}%
+     {}{}}%
+  }
+  \strng{namehash}{PVKSA1}
+  \strng{fullhash}{PVKSA1}
+  \field{title}{Modeling and Performance Analysis of PID Controlled BLDC Motor
+  and Different Schemes of PWM Controlled BLDC Motor}
+  \field{journaltitle}{nternational Journal of Scientific and Research
+  Publications, Volume 3, Issue 4, April 2013}
+\endentry
+
 \lossort
 \endlossort
 
