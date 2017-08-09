@@ -201,7 +201,7 @@
 	
 		\newpage
 		
-		Em uma segunda etapa, utilizou-se o motor Maxon 45fl-200142, cujo controle é o objetivo deste estudo. Nesse caso, foi possível utilizar o feedback dos sensores de efeito hall e obter uma rotação suave, além disso, foi desenvolvido um script para a obtenção da tabela de comutação, uma vez que esta não é fornecida pelo fabricante. Este script pode ser posteriormente utilizado para a obtenção da tabela de comutação de qualquer motor Brushless. Vale ressaltar que a regulação da velocidade aqui é feita utilizando PWM. Para isso uma saída PWM é gerada para cada transístor que leva corrente do motor ao ground, seguindo o esquema mostrado em \ref{fig:esquemamotor}.
+		Em uma segunda etapa, utilizou-se o motor Maxon 45fl-200142, cujo controle é o objetivo deste estudo. Nesse caso, foi possível utilizar o feedback dos sensores de efeito hall e obter uma rotação suave, além disso, foi desenvolvido um script para a obtenção da tabela de comutação, uma vez que esta não é fornecida pelo fabricante. Este script pode ser posteriormente utilizado para a obtenção da tabela de comutação de qualquer motor Brushless. Vale ressaltar que a regulação da velocidade aqui é feita utilizando PWM. Para isso uma saída PWM é gerada para cada transistor que leva corrente do motor ao ground, seguindo o esquema mostrado em \ref{fig:esquemamotor}.
 		A figura \ref{fig:motornovo}, abaixo, mostra o motor da Maxon rotacionando. Mais adiante serão tratados os aspectos de controle implementados.
 		
 		\begin{figure}[ht]
@@ -233,7 +233,7 @@
 		
 		\newpage
 		
-		Foi utilizado um controlador PI (proporcional e integral); esta escolha se deve ao fato de que o termo integral do controlador elimina os erros em regime. Ademais, o controle de posição não exige tempo de resposta elevado (como seria o caso de um controlador PD). A função de transferência em tempo contínuo para o controlador PI pode ser vista em \ref{tfcontroladorct}.
+		Foi utilizado um controlador PI (proporcional e integral); esta escolha se deve ao fato de que o termo integral do controlador elimina os erros em regime. Ademais, o controle de velocidade não exige tempo de resposta elevado (como seria o caso de um controlador PD). A função de transferência em tempo contínuo para o controlador PI pode ser vista em \ref{tfcontroladorct}.
 		
 		\begin{equation}
 			\frac{\varepsilon(s)}{\epsilon(s)}= Kp + \frac{Ki}{s} \label{tfcontroladorct}
@@ -286,7 +286,7 @@
 	
 	O conhecimento aqui adquirido será propagado na iniciativa ITAndroids e servirá de base para a categoria recém fundada Small Size. Vale ressaltar que a a participação nessa categoria será benéfica para a imagem do ITA no panorama internacional.
 	
-	Ressalta-se, por fim, que ainda restam muitos testes a serem realizados no motor. Além disso, a implementação no hardware eletrônico final será feita até outubro, tendo em vista que espera-se que a placa eletrônica final já tenha sido confeccionada e testada até esta data.  A tabela de comutação já está montada e serão mantidos o mesmo modelo físico e o mesmo controlador, bastando apenas adaptar o código para linguagem VHDL.
+	Ressalta-se, por fim, que ainda restam muitos testes a serem realizados no motor. Além disso, a implementação no hardware eletrônico final será feita até outubro, tendo em vista que espera-se que a placa eletrônica final já tenha sido confeccionada e testada até esta data.  A tabela de comutação já está montada e serão mantidos o mesmo modelo físico e o mesmo controlador, bastando apenas adaptar o código ao hardware final do robô.
 	
 	\section{Agradecimentos}
 	Agradeço ao CNPQ, pelo apoio financeiro durante a realização do projeto, bem como ao meu professor orientador pelo apoio à realização do projeto. Agradeço à iniciativa ITAndroids, por fornecer os treinamentos necessários e recursos materiais para a realização do projeto.
