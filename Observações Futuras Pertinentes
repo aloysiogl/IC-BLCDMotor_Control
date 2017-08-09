@@ -1,0 +1,11 @@
+Para avaliar bem o comportamento do motor vai precisar também levar em conta a inércia do robô em si. No VSS, isso fez muita diferença.
+
+Atrito viscoso costuma fazer diferença sim, não é completamente cagável. Claro que isso depende também dos parâmetros do motor em específico.
+
+No caso do Small, como vamos conseguir medir as correntes que passam pelo motor, seria interessante fazer também uma malha de corrente para aumentar a banda da corrente.
+
+Requisitos no tempo não costuma ser muito bons. Na prática, é até adequado, desde que depois você verifique outras questões, como as margens de estabilidade (margem de ganho e de fase).
+
+No caso, como você está usando um controlador PI, é importante implementar anti-windup. O fenômeno de windup surge devido à existência de saturação de comando (a voltagem da bateria tem limite).
+
+
