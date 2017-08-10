@@ -1,0 +1,37 @@
+\begin{thebibliography}{5}
+\newcommand{\enquote}[1]{``#1''}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{URL }
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi:\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem[{Bordalo \emph{et~al.}(1989)Bordalo, Ferziger and Kline}]{Bordalo89}
+Bordalo, S.N., Ferziger, J.H. and Kline, S.J., 1989.
+\newblock \enquote{The development of zonal models for turbulence}.
+\newblock In \emph{Proceedings of the 10th Brazilian Congress of Mechanical
+  Engineering}. ABCM, Rio de Janeiro, Brazil, Vol.~1, pp. 41--44.
+
+\bibitem[{Clark(1986)}]{Clark86}
+Clark, J.A., 1986.
+\newblock Private communication, University of Michigan, Ann Harbor.
+
+\bibitem[{Coimbra(1978)}]{Coimbra78}
+Coimbra, A.L., 1978.
+\newblock \emph{Lessons of Continuum Mechanics}.
+\newblock Ed. Edgard Bl\"{u}cher, S\~{a}o Paulo, Brazil.
+\newblock 428 p.
+
+\bibitem[{Maximo(2015)}]{artigoMangaSBAI}
+Maximo, M., 2015.
+\newblock \emph{SBAI - Simpósio Brasileiro de Automação Inteligente}.
+
+\bibitem[{Sparrow(1980)}]{Sparrow80}
+Sparrow, E.M., 1980.
+\newblock \enquote{Forced convection heat transfer in a duct having
+  spanwise-periodic rectangular protuberances}.
+\newblock \emph{Numerical Heat Transfer}, Vol.~3, pp. 149--167.
+
+\end{thebibliography}
