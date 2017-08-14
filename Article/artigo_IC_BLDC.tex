@@ -6,8 +6,7 @@
     % CABEÇALHO
     \fancypagestyle{firststyle}
 	{
-   		\lhead{\emph{Anais do XXII Encontro de Iniciação Científica e Pós-Graduação do ITA - XXII ENCITA / 2016
-	Instituto Tecnológico de Aeronáutica, São José dos Campos, SP, Brasil, 14 de outubro de 2016}}  
+   		\lhead{\emph{Anais do XXIII Encontro de Iniciação Científica e Pós-Graduação do ITA -  XXIII ENCITA / 2017 Instituto Tecnológico de Aeronáutica, São José dos Campos, SP, Brasil, XXIII  26 de outubro de 2017}}  
 	}
     \thispagestyle{firststyle}
     \vspace{-.5cm}
@@ -15,14 +14,14 @@
     \begin{tabular}{p{\textwidth}}
     \begin{center}
     \vspace{-.6cm}
-    \title{Controle para Rastreio de Trajetória por um Robô com Acionamento Diferencial Utilizando Retroalimentação por Câmera}
+    \title{Controle de motor elétrico Brushless Maxon 45fl-200142 para robô jogador de futebol Small Size}
     \end{center}
-    \textbf{Téssio Perotti Arruda}\\
+    \textbf{Aloysio Galvão Lopes}\\
     \small{Instituto Tecnológico de Aeronáutica}\\
-    \small{Rua H8A, 113, CTA}\\
-    \small{12.228-460 - São José dos Campos/SP}\\
+    \small{Rua H8C, 322, DCTA}\\
+    \small{12.228-462 - São José dos Campos/SP}\\
     \small{Bolsista PIBIC - CNPq}\\
-    \small{tessio.perotti@gmail.com}\\
+    \small{aloysiogl@gmail.com}\\
     \\ 
     \textbf{Carlos César Aparecido Eguti}\\
     \small{Instituto Tecnológico de Aeronáutica}\\
@@ -45,20 +44,36 @@
 %    \\
 %    \authors{\textcolor[rgb]{0.98,0.00,0.00}{Mesmo  formato para outros autores e instituições, se houver.}} \\
     \\
-    \abstract{\textbf{Resumo:} O propósito destas instruções é servir de modelo para a formatação de trabalhos a serem publicados nos Anais do CONEM 2016. O resumo deve descrever os objetivos, a metodologia e as principais conclusões em não mais de 4000 caracteres. Ele {\bf não deve conter} nem fórmulas ou deduções matemáticas e nem citações bibliográficas. O trabalho completo será 
+    \abstract{\textbf{Resumo:}
+     Neste trabalho é realizada a simulação e implementação de um controle do motor elétrico do tipo Brushless Maxon 45fl-200142. O objetivo do trabalho foi realizar o modelamento matemático das equações que regem o motor citado; realizar a simulação do modelo obtido; desenvolver, simular e otimizar os parâmetros de um controlador PI; desenvolver o hardware para o controle do motor e implementar o controlador para o motor.
+     
+     Para isso, foi, inicialmente, projetado e criado o hardware para controle do motor. Em seguida, o hardware foi testado em um motor BLDC de drive de DVD em loop aberto. Após isso, foi realizada a modelagem do motor baseada nos parâmetros físicos fornecidos pelo fabricante; com base nisso, foi possível simular o comportamento do motor e projetar o controlador. Por fim, foi possível implementar o controlador no hardware desenvolvido e controlar o motor Maxon 45fl-200142.
+     
+     Dos resultados obtidos, foi possível concluir que o controle do motor só pode ser realizado com feedback. Isso significa que o controle do motor do drive de DVD em loop aberto não obteve sucesso. No entanto, o controle do motor Maxon foi realizado com sucesso, pois foi utilizado feedback dos sensores de efeito Hall, além do mais os resultados de velocidade angular obtidos pelo motor se mantiveram fiéis ao modelo, o que mostra que o modelo utilizado descreve adequadamente o motor.}\\    
+     \keywords{\textbf{Palavras-chave:} Motor elétrico Brushless, Modelagem física, Simulação, Controle de velocidade.}\\
     \end{tabular}
     
 
     \section{INTRODUÇÃO}
-        
-        Os Anais do CONEM 2016 serão publicados online,  com os artigos no formato Adobe$^{\small{TM}}$ PDF.
-
-        Os artigos devem ser rigorosamente formatados de acordo com estas instruções e este arquivo texto pode ser usado como um template por usuários do \LaTeX\ e, em qualquer caso, como um modelo para os usuários de outros processadores de texto.
-
-        Os artigos estão limitados a um máximo de 10 páginas, incluindo tabelas e figuras. O arquivo final em formato pdf não deve exceder 2,5 MB.
-
-        A língua oficial do congresso é o português; entretanto serão aceitos manuscritos em espanhol ou em inglês. Se o trabalho não for escrito em inglês, o autor deverá incluir o título, os nomes dos autores e afiliações, o resumo e as palavras-chave, traduzidos para o inglês, após a lista de referências, no fim do artigo.
-
+    A ITAndroids, equipe de robótica do ITA, é uma iniciativa de alunos do ITA que representa a
+    instituição em diversas competições de robótica nacionais e internacionais. O principal objetivo
+    dessa iniciativa é a integração dos alunos com atividades de pesquisa em engenharia, em especial
+    em robótica e inteligência artificial.
+    A ITAndroids acredita que o hardware é fundamental no desenvolvimento de qualquer projeto
+    de robótica, por isso, recentemente tem-se investido bastante no desenvolvimento dessa área.
+    O desenvolvimento de conhecimento na área de controle de motores elétricos, assim, torna-se
+    fundamental para a melhoria técnica da iniciativa.
+    Nesse sentido, abre-se caminho para a participação na categoria Small Size, a qual necessita
+    de uma eletrônica mais desenvolvida o que implica diretamente no desenvolvimento de conheci-
+    mento sobre controle de motores. Os motores utilizados para a locomoção dos robôs são motores
+    Brushless, essa escolha se justifica pelo fato de que motores Brushless são mais eficientes, ocupam
+    menos espaço e apresentam desgaste muito menor que motores DC tradicionais.
+    Uma vez que o desgaste mecânico durante as partidas de futebol de robôs Small Size é elevado
+    e é preciso alto rendimento dos sistemas mecânicos os motores BLDC são a escolha ideal; além
+    disso, as principais equipes internacionais, tal como a equipe tailandesa SKUBA[2] fazem uso de
+    desses motores. Em contrapartida, o controle deste tipo de atuador mecânico se dá de maneira
+    mais complexa, uma vez que a comutação do campo magnético não é feita mecanicamente por
+    escovas. A figura 1, abaixo, ilustra a mecânica de um motor BLDC.
 
     \section{FORMATO DO TEXTO}
         
@@ -183,5 +198,9 @@
 %    \keywords{\textbf{Palavras-chave:} keyword 1, keyword 2, keyword 3 (up to 5 keywords) }\\
 %    \end{tabular}
 %}
+
+%OBSs
+%Os artigos estão limitados a um máximo de 10 %páginas, incluindo tabelas e figuras. O %arquivo final em formato pdf não deve %exceder 2,5 MB.
+%$^{\small{TM}}$
 
 \end{document}

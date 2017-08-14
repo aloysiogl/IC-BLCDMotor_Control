@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.7)  14 AUG 2017 08:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.7)  14 AUG 2017 08:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**CONEM2016.tex
-(./CONEM2016.tex
+**artigo_IC_BLDC.tex
+(./artigo_IC_BLDC.tex
 LaTeX2e <2016/02/01>
 Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
@@ -468,8 +468,9 @@ Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
-)) (./CONEM2016.aux)
-\openout1 = `CONEM2016.aux'.
+))
+(./artigo_IC_BLDC.aux)
+\openout1 = `artigo_IC_BLDC.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
@@ -484,8 +485,7 @@ LaTeX Font Info:    ... okay on input line 4.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
 LaTeX Font Info:    ... okay on input line 4.
 LaTeX Font Info:    Try loading font information for T1+ptm on input line 4.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 *geometry* driver: auto-detecting
@@ -580,22 +580,19 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 15.
+(Font)              <7> on input line 14.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 15.
+(Font)              <5> on input line 14.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 18.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 17.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 20.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 19.
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 48.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 47.
 
-Overfull \hbox (6.13774pt too wide) in paragraph at lines 14--51
+Overfull \hbox (6.13774pt too wide) in paragraph at lines 13--55
 []  [] 
  []
-
-
-LaTeX Font Warning: Command \small invalid in math mode on input line 55.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -606,34 +603,37 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-<figura.pdf, id=12, 291.3562pt x 198.7425pt>
+<figura.pdf, id=10, 291.3562pt x 198.7425pt>
 File: figura.pdf Graphic file (type pdf)
  <use figura.pdf>
-Package pdftex.def Info: figura.pdf used on input line 120.
+Package pdftex.def Info: figura.pdf used on input line 134.
 (pdftex.def)             Requested size: 291.35548pt x 198.742pt.
- [2 <./figura.pdf>] (./CONEM2016.bbl) [3] (./CONEM2016.aux) ) 
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[2] (./artigo_IC_BLDC.bbl) [3 <./figura.pdf>] (./artigo_IC_BLDC.aux) ) 
 Here is how much of TeX's memory you used:
- 3601 strings out of 493029
- 46436 string characters out of 6136235
- 126794 words of memory out of 5000000
- 7064 multiletter control sequences out of 15000+600000
- 25435 words of font info for 30 fonts, out of 8000000 for 9000
+ 3599 strings out of 493029
+ 46473 string characters out of 6136235
+ 126796 words of memory out of 5000000
+ 7063 multiletter control sequences out of 15000+600000
+ 22713 words of font info for 28 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,11n,45p,772b,283s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texliv
-e/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/t
-ype1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/urw/times/utmri8a.pfb>
-Output written on CONEM2016.pdf (3 pages, 127906 bytes).
+ 41i,12n,45p,777b,283s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/sha
+re/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
+b8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on artigo_IC_BLDC.pdf (3 pages, 122910 bytes).
 PDF statistics:
- 79 PDF objects out of 1000 (max. 8388607)
- 56 compressed objects within 1 object stream
+ 75 PDF objects out of 1000 (max. 8388607)
+ 53 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
