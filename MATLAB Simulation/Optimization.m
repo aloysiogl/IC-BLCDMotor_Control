@@ -11,5 +11,7 @@ Controlador = tf([Kp + Ki], [1 0])
 
 Sistema = Controlador*Planta
 
+margin(Sistema)
+
 figure
 bode(Sistema)
