@@ -93,7 +93,7 @@
 	\end{figure}
     
     
-    Adicionalmente, é comum haver três sensores de efeito hall (como é o caso deste motor), para que seja possível controlar a comutação com feedback. A combinação das três saídas de cada um dos sensores de efeito hall dá a próxima comutação do motor de maneira única para cada sentido de rotação. Com isso, pode-se montar uma tabela de correspondências entre saídas do sensores de efeito hall e passo de comutação: a tabela de comutação do motor. Essa tabela, em geral, não é fornecida pelo fabricante e deve ser montada para que seja possível controlar o motor.
+    Adicionalmente, é comum haver três sensores de efeito Hall (como é o caso deste motor), para que seja possível controlar a comutação com feedback. A combinação das três saídas de cada um dos sensores de efeito Hall dá a próxima comutação do motor de maneira única para cada sentido de rotação. Com isso, pode-se montar uma tabela de correspondências entre saídas do sensores de efeito Hall e passo de comutação: a tabela de comutação do motor. Essa tabela, em geral, não é fornecida pelo fabricante e deve ser montada para que seja possível controlar o motor.
     
     \subsection{Modelamento do Motor}
     
@@ -149,13 +149,13 @@
 		\begin{center}
 			\includegraphics[angle=0, scale=0.06]{images/motorantigo}
 		\end{center}
-		\caption{\textbf{Motor de drive de DVD utilizado nos testes, nota-se que não há saídas para sensores de efeito hall.}}
+		\caption{\textbf{Motor de drive de DVD utilizado nos testes, nota-se que não há saídas para sensores de efeito Hall.}}
 		\label{fig:motorantigo}
 	\end{figure}
     
-    Em uma segunda etapa, utilizou-se o motor Maxon 45fl-200142, cujo controle é o objetivo deste estudo. Nesse caso, foi possível utilizar o feedback dos sensores de efeito hall e obter uma rotação suave, além disso, foi desenvolvido um script para a obtenção da tabela de comutação, uma vez que esta não é fornecida pelo fabricante. O que este script faz é ciclizar lentamente (1s) as saídas do motor conforme descrito na sequência de comutação direta em \cite{atmeldiagrama} e, em seguida, fazer a leitura dos sensores de efeito hall. Com isso, é possível montar a tabela de comutação direta; a tabela inversa pe montada por meio da tabela direta, apenas invertendo a lógica de rotação.
+    Em uma segunda etapa, utilizou-se o motor Maxon 45fl-200142, cujo controle é o objetivo deste estudo. Nesse caso, foi possível utilizar o feedback dos sensores de efeito Hall e obter uma rotação suave, além disso, foi desenvolvido um script para a obtenção da tabela de comutação, uma vez que esta não é fornecida pelo fabricante. O que este script faz é ciclizar lentamente (1s) as saídas do motor conforme descrito na sequência de comutação direta em \cite{atmeldiagrama} e, em seguida, fazer a leitura dos sensores de efeito Hall. Com isso, é possível montar a tabela de comutação direta; a tabela inversa pe montada por meio da tabela direta, apenas invertendo a lógica de rotação.
     
-    Este script pode ser, posteriormente, utilizado para a obtenção da tabela de comutação de qualquer motor Brushless com sensores de efeito hall. Vale ressaltar que a regulação da velocidade aqui é feita utilizando PWM. Para isso, uma saída PWM é gerada para cada transistor que leva corrente do motor ao ground, seguindo o esquema mostrado em Fig. \ref{fig:diagrama}.
+    Este script pode ser, posteriormente, utilizado para a obtenção da tabela de comutação de qualquer motor Brushless com sensores de efeito Hall. Vale ressaltar que a regulação da velocidade aqui é feita utilizando PWM. Para isso, uma saída PWM é gerada para cada transistor que leva corrente do motor ao ground, seguindo o esquema mostrado em Fig. \ref{fig:diagrama}.
     A Figura \ref{fig:motornovo}, abaixo, mostra o motor da Maxon rotacionando. Mais adiante serão tratados os aspectos de controle implementados.
 
 	\begin{figure}[ht]
@@ -192,7 +192,7 @@
     \frac{\varepsilon(s)}{\epsilon(s)}= Kp + \frac{Ki}{s} \label{tfcontroladorct}
     \end{equation}
     
-    Foi realizada uma otimização com auxílio da ferramenta de PI tunning, presente no MATLAB$^{\small{TM}}$. Buscou-se obter um pequeno overshoot e cerca de 0.001 segundo até atingir o estado estacionário. As constantes obtidas foram: Kp = 2.8522 e Ki = 104.55. Após isso, foi gerado o gráfico de Fig. \ref{fig:saidasimulada} para a saída em velocidade angular do sistema mostrado em Fig.  \ref{fig:sistemasimulink}.
+    Foi realizada uma otimização com auxílio da ferramenta de PI tunning, presente no MATLAB$^{\small{TM}}$. Buscou-se obter um pequeno overshoot e cerca de 0.001 segundo até atingir o estado estacionário. No domínio da frequência, é possível ver as fases de margem e de ganho em Fig. \ref{fig:margin}. As constantes obtidas foram: Kp = 2.8522 e Ki = 104.55. Após isso, foi gerado o gráfico de Fig. \ref{fig:saidasimulada} para a saída em velocidade angular do sistema mostrado em Fig.  \ref{fig:sistemasimulink}.
     
     \begin{figure}[ht]
     	\begin{center}
@@ -201,6 +201,14 @@
     	\caption{\textbf{Sistema completo modelado com auxílio do SIMULINK$^{\small{\textbf{TM}}}$.}}
     	\label{fig:sistemasimulink}
     \end{figure}
+
+	\begin{figure}[ht]
+		\begin{center}
+			\includegraphics[angle=0, scale=0.8]{images/margins.png}
+		\end{center}
+		\caption{\textbf{Margens de estabilidade do sistema em estudo.}}
+		\label{fig:margin}
+	\end{figure}
 
 	\begin{figure}[ht]
 		\begin{center}
@@ -220,13 +228,13 @@
     \varepsilon[z] = \varepsilon[z-1] + Kp\cdot\epsilon[z] - Kp\cdot\epsilon[z-1] - \frac{Ki T}{2}(\epsilon[z] + \epsilon[z-1]) \label{recorrencia}
     \end{equation}
     
+    \newpage
+    
     \section{CONSIDERAÇÕES FINAIS}
     
     Após a implementação do algorítimo, observou-se que o motor era capaz de atingir a velocidade de 99.2 radianos por segundo, o que mostra que o modelo se adéqua aos parâmetros físicos do sistema.
     
-    ...falar das melhoramentos
-    Ressalta-se, por fim, que ainda restam muitos testes a serem realizados no motor. Além disso, a implementação no hardware eletrônico final será feita até outubro, tendo em vista que espera-se que a placa eletrônica final já tenha sido confeccionada e testada até esta data.  A tabela de comutação já está montada e serão mantidos o mesmo modelo físico e o mesmo controlador, bastando apenas adaptar o código ao hardware final do robô.
-    ...
+    Ressalta-se, por fim, que existem alguns melhoramentos a serem realizados no controlador antes da implementação final no robô. Pode-se incluir uma malha de corrente, uma vez que o hardware do robô permite. Além disso, deve-se contar a inércia do robô no modelo final a ser utilizado. Os testes realizados no sistemas, também, devem ser refeitos no hardware final.
     
     Além disso, os quatro motores foram posicionados na carcaça do primeiro protótipo do robô Small Size como mostrado em Fig. (\ref{fig:smallfoto}).
 
@@ -246,11 +254,7 @@
 	\bibliographystyle{abcm}
 	\bibliography{bibliografia}
 	
-	\section{RESPONSABILIDADE AUTORAIS}
-	
-	Os trabalhos escritos em português ou espanhol devem incluir (após direitos autorais) título, os nomes dos autores e afiliações, o resumo e as palavras chave, traduzidos para o inglês e a declaração a seguir, devidamente adaptada para o número de autores.
-	
-	O(s) autor(es) é(são) o(s) único(s) responsável(is) pelo conteúdo deste trabalho.
+	\section{RESPONSABILIDADES AUTORAIS}
 	
 	% % RESUMO EM INGLES
 	%
@@ -259,7 +263,7 @@
 	    \begin{tabular}{||p{\textwidth}}
 	    \begin{center}
 	    \vspace{-.6cm}
-	    \title{Maxon 45fl-200142 Brushless mtor control for Small Size league soccer robot}
+	    \title{Maxon 45fl-200142 Brushless motor control for Small Size league soccer robot}
 	    \end{center}
 	    \authors{Aloysio Galvão Lopes, aloysiogl@gmail.com} \\
 	    \authors{Carlos César Aparecido Eguti, cesar.eguti@gmail.com} \\
@@ -280,100 +284,5 @@
 	    \keywords{\textbf{Keywords:} Electrical Brushless Motor, Physical Modeling, Simulation, Speed Control.}\\
 	    \end{tabular}
 	}
-
-    \section{FORMATO DO TEXTO}
     
-        
-        O artigo deve ser digitado em papel tamanho A4, usando fonte Times New Roman, tamanho 10, exceto para o título, nomes dos autores, instituição, endereço, resumo e palavras-chave, que têm formatações específicas indicadas acima. Espaço simples entre linhas deve ser usado ao longo do texto.
-
-        O corpo de texto que contém o título deve ser centralizado, em parágrafo com recuo esquerdo de 0,1 cm e marcado com borda esquerda de largura 2$\frac{1}{4}$ pontos.
-
-        O corpo de texto que contém os nomes de autores e de instituições devem ser alinhados à esquerda, em parágrafo com recuo esquerdo de 0,1 cm e marcados com borda esquerda de largura 2 $\frac{1}{4}$ pontos.
-
-        A primeira página deve ter margem superior igual a 5 cm, e todas as outras margens (esquerda, direita e inferior) iguais a 2 cm. Todas as demais páginas do trabalho devem ter todas as suas margens iguais a 2 cm.
-
-        \textbf{\textcolor[rgb]{0.98,0.00,0.00}{NÃO NUMERAR AS PÁGINAS.}}
-
-        \textbf{\textcolor[rgb]{1.00,0.00,0.00}{QUANDO SUBMETER O TRABALHO PELA PRIMEIRA VEZ EM PDF, OS NOMES DOS AUTORES E AFILIAÇÕES DEVEM SER SUPRIMIDOS. INCLUA APENAS O CÓDIGO DO RESUMO, O QUAL FOI FORNECIDO NO E-MAIL DE ACEITAÇÃO DO SEU RESUMO, MANTENDO O ESPAÇO ORIGINAL DESTINADO AOS NOMES DOS AUTORES E AFILIAÇÃO.}}
-
-
-    \subsection{Títulos e Subtítulos das Seções }
-
-        Os títulos e subtítulos das seções devem ser digitados em fonte Times New Roman, tamanho 10, estilo negrito, e alinhados à esquerda. Os títulos das seções são com letras maiúsculas (Exemplo: \textbf{MODELO MATEMÁTICO}), enquanto os subtítulos só têm as primeiras letras maiúsculas (Exemplo: \textbf{Modelo Matemático}). Eles devem ser numerados, usando numerais arábicos separados por pontos, até o máximo de 3 subníveis. Uma linha em branco de espaçamento simples deve ser incluída acima e abaixo de cada título ou subtítulo.
-
-    \subsection{Corpo do Texto}
-
-        O corpo do texto é justificado e com espaçamento simples. A primeira linha de cada parágrafo tem recuo de 0,6 cm a partir da margem esquerda.
-
-        As equações matemáticas são alinhadas à esquerda com recuo de 0,6 cm.  Elas são referidas como "Eq. (1)" no meio de uma frase, ou "Equação (1)" quando usada no início de uma sentença. Os números das equações são numerais arábicos colocados entre parênteses, e alinhados à direita, como mostrado na Eq. (1).
-
-        Os símbolos usados nas equações devem ser definidos imediatamente antes ou depois de sua primeira ocorrência no texto. \citep{artigoMangaSBAI}
-
-        O tamanho da fonte usado nas equações deve ser compatível com o utilizado no texto. Todos as grandezas físicas devem ter suas unidades expressas no sistema S.I. (métrico).
-
-        \begin{equation}
-        \frac{\partial^2 T}{\partial x^2} + \frac{\partial^2 T}{\partial y^2} = 0 \label{equation1}
-        \end{equation}
-
-        As tabelas devem ser centralizadas. Elas são referidas por "Tab. 1" no meio de uma frase, ou por "Tabela 1" quando usada no início de uma sentença. A legenda deve ser centralizada e localizada imediatamente acima da tabela. Anotações e valores numéricos nela incluídos devem ter tamanhos compatíveis com o da fonte usada no texto do trabalho, e todas as unidades devem ser expressas no sistema S.I. (métrico). As unidades são incluídas apenas na primeira linha ou primeira coluna de cada tabela, conforme for apropriado. As tabelas devem ser colocadas tão perto quanto possível de sua primeira citação no texto. Uma linha em branco, em espaço simples, deve ser introduzida entre a tabela, seu título e o texto.
-
-        O estilo de borda da tabela é livre. As legendas das Figuras e das Tabelas não devem exceder 3 linhas.
-
-        \begin{table}[ht]
-            \begin{center}
-                \caption{\textbf{Resultados experimentais para as propriedades de flexão dos materiais MAT1 e MAT2. Valores médios obtidos em 20 ensaios.}}
-                    \begin{tabular}{|c|c|c|}
-                    \hline
-                    Propriedades do compósito       & CFRC-TWILL        & CFRC-4HS         \\
-                    \hline
-                    Resistência à Flexão  (MPa)     & 209$\pm$ 10       & 180 $\pm$  15    \\
-                    \hline
-                    Módulo de Flexão  (GPa)         & 57.0 $\pm$ 2.8    & 18.0 $\pm$  1.3  \\
-                    \hline
-                    \end{tabular}
-            \end{center}
-        \end{table}
-
-        As figuras deve ser centralizadas. Elas são referenciadas por "Fig. 1" no meio de uma frase ou por "Figura 1" quando usada no início de uma sentença. Sua legenda deve ser centralizada e localizada imediatamente abaixo da figura. As anotações e numerações devem tem tamanhos compatíveis com o da fonte usada no texto, e todas as unidades devem ser expressas no sistema S.I. (métrico). As figuras devem ser colocadas o mais próximo possível de sua primeira citação no texto. Deve ser deixada uma linha em branco, de espaçamento simples, entre as figuras e o texto.
-    
-        \begin{figure}[h]
-            \begin{center}
-                \includegraphics[angle=0, scale=.8]{figura.pdf}
-            \end{center}
-            \caption{\textbf{Comparação entre os resultados do presente modelo com os resultados experimentais de Wirtz e Stutzman (1982).}}
-        \end{figure}
-
-        Figuras coloridas e fotografias de alta qualidade podem ser incluídas no trabalho. Para reduzir o tamanho do arquivo e preservar a resolução gráfica, os arquivos das imagens devem ser convertidos para o  formato GIFF (para figuras com até 16 cores) ou para o formato JPEG (alta densidade de cores), antes de serem inseridos no trabalho.
-
-        A citação das referências no corpo do texto pode ser feita nos formatos: "\citet{Bordalo89} mostra que o corpo...", ou: "Vários trabalhos (\citeauthor{Coimbra78}, \citeyear{Coimbra78}; \citeauthor{Clark86}, \citeyear{Clark86} e \citeauthor{Sparrow80},  \citeyear{Sparrow80}) mostram que a rigidez...".
-
-        
-         %   \citet{key} ==>>                Jones et al. (1990)
-         %   \citet*{key} ==>>               Jones, Baker, and Smith (1990)
-         %   \citep{key} ==>>                (Jones et al., 1990)
-         %   \citep*{key} ==>>               (Jones, Baker, and Smith, 1990)
-         %   \citep[chap. 2]{key} ==>>       (Jones et al., 1990, chap. 2)
-         %   \citep[e.g.][]{key} ==>>        (e.g. Jones et al., 1990)
-         %   \citep[e.g.][p. 32]{key} ==>>   (e.g. Jones et al., p. 32)
-         %   \citeauthor{key} ==>>           Jones et al.
-         %   \citeauthor*{key} ==>>          Jones, Baker, and Smith
-         %   \citeyear{key} ==>>             1990
-        
-        Referências aceitas incluem: artigos de periódicos, dissertações, teses, artigos publicados em anais de congressos, livros, comunicações privadas e artigos submetidos e aceitos (com fonte identificada) e citações a páginas da internet.
-
-        A lista de referências deve ser uma seção específica denominada Referências, localizada no fim do artigo.
-
-        A primeira linha de cada referência deve ser alinhada à esquerda; todas as outras linhas têm recuo de 0,6 cm da margem esquerda. Todas as referências incluídas na lista devem aparecer como citações no texto do trabalho.
-
-        As referências devem ser postas em ordem alfabética, usando o último nome do primeiro autor, seguida do ano da publicação. Exemplo da lista de referências é apresentado abaixo.
-
-
-    
-
-
-    % REFERÊNCIAS
-    
-
-    
-
 \end{document}
