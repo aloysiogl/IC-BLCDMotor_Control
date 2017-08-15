@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.7)  14 AUG 2017 08:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.7)  15 AUG 2017 01:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -595,6 +595,15 @@ Overfull \hbox (6.13774pt too wide) in paragraph at lines 13--55
  []
 
 
+<images/4-Pole-brushless-DC-motor-animation.jpg, id=1, 1097.09875pt x 776.9025p
+t>
+File: images/4-Pole-brushless-DC-motor-animation.jpg Graphic file (type jpg)
+ <use images/4-Pole-brushless-DC-motor-animation.jpg>
+Package pdftex.def Info: images/4-Pole-brushless-DC-motor-animation.jpg used on
+ input line 68.
+(pdftex.def)             Requested size: 1097.09608pt x 776.90059pt.
+
+
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 22.37994pt.
  We now make it that large for the rest of the document.
@@ -603,37 +612,157 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-<figura.pdf, id=10, 291.3562pt x 198.7425pt>
+<images/comutacao.png, id=11, 527.9725pt x 268.00125pt>
+File: images/comutacao.png Graphic file (type png)
+
+<use images/comutacao.png>
+Package pdftex.def Info: images/comutacao.png used on input line 89.
+(pdftex.def)             Requested size: 527.9712pt x 268.00058pt.
+ [2 <./images/4-Pole-brushless-DC-motor-animation.jpg> <./images/comutacao.png 
+(PNG copy)>]
+<images/circuitdiagram.png, id=15, 707.64375pt x 367.3725pt>
+File: images/circuitdiagram.png Graphic file (type png)
+
+<use images/circuitdiagram.png>
+Package pdftex.def Info: images/circuitdiagram.png used on input line 130.
+(pdftex.def)             Requested size: 707.64203pt x 367.37158pt.
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 132.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 136.
+
+<images/montagemcircuito.JPG, id=16, 3276.24pt x 2457.18pt>
+File: images/montagemcircuito.JPG Graphic file (type jpg)
+
+<use images/montagemcircuito.JPG>
+Package pdftex.def Info: images/montagemcircuito.JPG used on input line 142.
+(pdftex.def)             Requested size: 3276.23206pt x 2457.17403pt.
+
+<images/motorantigo.JPG, id=17, 3276.24pt x 2457.18pt>
+File: images/motorantigo.JPG Graphic file (type jpg)
+
+<use images/motorantigo.JPG>
+Package pdftex.def Info: images/motorantigo.JPG used on input line 150.
+(pdftex.def)             Requested size: 3276.23206pt x 2457.17403pt.
+ [3 <./images/circuitdiagram.png (PNG copy)>]
+<images/motornovo.JPG, id=27, 3276.24pt x 2457.18pt>
+File: images/motornovo.JPG Graphic file (type jpg)
+
+<use images/motornovo.JPG>
+Package pdftex.def Info: images/motornovo.JPG used on input line 163.
+(pdftex.def)             Requested size: 3276.23206pt x 2457.17403pt.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 171.
+
+[4 <./images/montagemcircuito.JPG> <./images/motorantigo.JPG> <./images/motorno
+vo.JPG>] <images/stepResponse.png, id=31, 421.575pt x 303.38344pt>
+File: images/stepResponse.png Graphic file (type png)
+
+<use images/stepResponse.png>
+Package pdftex.def Info: images/stepResponse.png used on input line 175.
+(pdftex.def)             Requested size: 421.57396pt x 303.38269pt.
+
+<images/bode.png, id=32, 421.575pt x 360.59718pt>
+File: images/bode.png Graphic file (type png)
+ <use images/bode.png>
+Package pdftex.def Info: images/bode.png used on input line 183.
+(pdftex.def)             Requested size: 421.57396pt x 360.5963pt.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 195.
+
+[5 <./images/stepResponse.png (PNG copy)> <./images/bode.png (PNG copy)>]
+<images/sistemaEControlador.png, id=36, 1078.0275pt x 285.065pt>
+File: images/sistemaEControlador.png Graphic file (type png)
+
+<use images/sistemaEControlador.png>
+Package pdftex.def Info: images/sistemaEControlador.png used on input line 199.
+
+(pdftex.def)             Requested size: 1078.02487pt x 285.0643pt.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 201.
+
+<images/sistemStep.png, id=37, 526.21594pt x 316.18124pt>
+File: images/sistemStep.png Graphic file (type png)
+
+<use images/sistemStep.png>
+Package pdftex.def Info: images/sistemStep.png used on input line 207.
+(pdftex.def)             Requested size: 526.21466pt x 316.18047pt.
+
+<images/smallfoto.jpeg, id=38, 686.565pt x 695.59875pt>
+File: images/smallfoto.jpeg Graphic file (type jpg)
+
+<use images/smallfoto.jpeg>
+Package pdftex.def Info: images/smallfoto.jpeg used on input line 235.
+(pdftex.def)             Requested size: 686.56332pt x 695.59706pt.
+ (./artigo_IC_BLDC.bbl
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 12.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--15
+[]\T1/ptm/m/n/10 Atmel$[]$, 2008.  Ap-pli-ca-tion note, AVR194: Brush-less DC M
+o-tor Con-trol using AT-mega32M1,
+ []
+
+[6 <./images/sistemaEControlador.png (PNG copy)> <./images/sistemStep.png (PNG 
+copy)>]
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 19.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 19.
+
+
+LaTeX Font Warning: Command \small invalid in math mode on input line 31.
+
+)
+Overfull \hbox (14.19998pt too wide) in paragraph at lines 257--283
+[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 257--283
+
+ []
+
+[7 <./images/smallfoto.jpeg>] [8] <figura.pdf, id=49, 291.3562pt x 198.7425pt>
 File: figura.pdf Graphic file (type pdf)
- <use figura.pdf>
-Package pdftex.def Info: figura.pdf used on input line 134.
+
+<use figura.pdf>
+Package pdftex.def Info: figura.pdf used on input line 341.
 (pdftex.def)             Requested size: 291.35548pt x 198.742pt.
+ [9 <./figura.pdf>] (./artigo_IC_BLDC.aux
 
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
 
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[2] (./artigo_IC_BLDC.bbl) [3 <./figura.pdf>] (./artigo_IC_BLDC.aux) ) 
+) ) 
 Here is how much of TeX's memory you used:
- 3599 strings out of 493029
- 46473 string characters out of 6136235
- 126796 words of memory out of 5000000
- 7063 multiletter control sequences out of 15000+600000
- 22713 words of font info for 28 fonts, out of 8000000 for 9000
+ 3692 strings out of 493029
+ 48412 string characters out of 6136235
+ 127298 words of memory out of 5000000
+ 7134 multiletter control sequences out of 15000+600000
+ 27228 words of font info for 31 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,12n,45p,777b,283s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/sha
-re/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
-b8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on artigo_IC_BLDC.pdf (3 pages, 122910 bytes).
+ 41i,11n,45p,803b,316s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8
+a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/sh
+are/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on artigo_IC_BLDC.pdf (9 pages, 1211652 bytes).
 PDF statistics:
- 75 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
+ 114 PDF objects out of 1000 (max. 8388607)
+ 73 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -8,30 +8,32 @@
   \providecommand{\doi}{doi:\discretionary{}{}{}\begingroup
   \urlstyle{rm}\Url}\fi
 
-\bibitem[{Bordalo \emph{et~al.}(1989)Bordalo, Ferziger and Kline}]{Bordalo89}
-Bordalo, S.N., Ferziger, J.H. and Kline, S.J., 1989.
-\newblock \enquote{The development of zonal models for turbulence}.
-\newblock In \emph{Proceedings of the 10th Brazilian Congress of Mechanical
-  Engineering}. ABCM, Rio de Janeiro, Brazil, Vol.~1, pp. 41--44.
+\bibitem[{Atmel$^{\small{TM}}$(2008)}]{atmeldiagrama}
+Atmel$^{\small{TM}}$, 2008.
+\newblock Application note, AVR194: Brushless DC Motor Control using
+  ATmega32M1, <https://www.maxonmotor.com/maxon/view/product/200142>.
 
-\bibitem[{Clark(1986)}]{Clark86}
-Clark, J.A., 1986.
-\newblock Private communication, University of Michigan, Ann Harbor.
+\bibitem[{Baldursson(2005)}]{modelomotor}
+Baldursson, S., 2005.
+\newblock \emph{BLDC Motor Modelling and Control – A Matlab$^{\small{TM}}$
+  /Simulink$^{\small{TM}}$ Implementation}.
+\newblock Disserta\c{c}\~{a}o de mestrado, Institutionen för Energi och
+  Miljö.
 
-\bibitem[{Coimbra(1978)}]{Coimbra78}
-Coimbra, A.L., 1978.
-\newblock \emph{Lessons of Continuum Mechanics}.
-\newblock Ed. Edgard Bl\"{u}cher, S\~{a}o Paulo, Brazil.
-\newblock 428 p.
+\bibitem[{Lertariyasakchai \emph{et~al.}(2012)Lertariyasakchai, Panyapiang,
+  Chaiso and Sukvichai}]{skuba}
+Lertariyasakchai, P., Panyapiang, T., Chaiso, K. and Sukvichai, K., 2012.
+\newblock \enquote{Skuba 2012 team description}.
+\newblock \emph{Robocup TDP}, Vol.~1.
 
-\bibitem[{Maximo(2015)}]{artigoMangaSBAI}
-Maximo, M., 2015.
-\newblock \emph{SBAI - Simpósio Brasileiro de Automação Inteligente}.
+\bibitem[{Maxon(2017)}]{Datasheet}
+Maxon, 2017.
+\newblock Datasheet, Maxon Motor$^{\small{TM}}$,
+  <https://www.maxonmotor.com/maxon/view/product/200142>.
 
-\bibitem[{Sparrow(1980)}]{Sparrow80}
-Sparrow, E.M., 1980.
-\newblock \enquote{Forced convection heat transfer in a duct having
-  spanwise-periodic rectangular protuberances}.
-\newblock \emph{Numerical Heat Transfer}, Vol.~3, pp. 149--167.
+\bibitem[{Yedamale(2003)}]{introducaobldc}
+Yedamale, P., 2003.
+\newblock \enquote{Brushless dc (bldc) motor fundamentals}.
+\newblock \emph{Microchip Technology Inc.}, Vol.~1.
 
 \end{thebibliography}
