@@ -1,4 +1,4 @@
-\begin{thebibliography}{5}
+\begin{thebibliography}{10}
 \newcommand{\enquote}[1]{``#1''}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
@@ -20,16 +20,43 @@ Baldursson, S., 2005.
 \newblock Disserta\c{c}\~{a}o de mestrado, Institutionen för Energi och
   Miljö.
 
+\bibitem[{Committee(2017)}]{robocupregras}
+Committee, S.S.L.T., 2017.
+\newblock \emph{Laws of the RoboCup Small Size League 2017}.
+
 \bibitem[{Lertariyasakchai \emph{et~al.}(2012)Lertariyasakchai, Panyapiang,
   Chaiso and Sukvichai}]{skuba}
 Lertariyasakchai, P., Panyapiang, T., Chaiso, K. and Sukvichai, K., 2012.
 \newblock \enquote{Skuba 2012 team description}.
 \newblock \emph{Robocup TDP}, Vol.~1.
 
+\bibitem[{MATLAB()}]{Matlab}
+MATLAB, 2017.
+\newblock \enquote{Matlab}.
+\newblock The MathWorks, Natick, MA, USA.
+
 \bibitem[{Maxon(2017)}]{Datasheet}
 Maxon, 2017.
 \newblock Datasheet, Maxon Motor$^{\small{TM}}$,
   <https://www.maxonmotor.com/maxon/view/product/200142>.
+
+\bibitem[{Ogata(1982)}]{ogata1982engenharia}
+Ogata, K., 1982.
+\newblock \emph{Engenharia de controle moderno}.
+\newblock Pearson Prentice Hall, 4th edition.
+\newblock ISBN 9788587918239.
+
+\bibitem[{Sen(1989)}]{livrocarta}
+Sen, P.C., 1989.
+\newblock \emph{Principles of Electric Machines and Power Electronics}.
+\newblock Wiley, 3rd edition.
+
+\bibitem[{Store(2017)}]{figuramotor}
+Store, E.T., 2017.
+\newblock \enquote{Brushless dc motor: Construction, working principle and
+  applications}.
+\newblock Site da Electrical Technology Store.
+\newblock \urlprefix\url{https://www.electricaltechnology.org/}.
 
 \bibitem[{Yedamale(2003)}]{introducaobldc}
 Yedamale, P., 2003.

@@ -3,53 +3,53 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: artigo_IC_BLDC.aux
 The style file: abcm.bst
 Database file #1: bibliografia.bib
-Warning--I didn't find a database entry for "artigoMangaSBAI"
-Warning--I didn't find a database entry for "Bordalo89"
-Warning--I didn't find a database entry for "Coimbra78"
-Warning--I didn't find a database entry for "Clark86"
-Warning--I didn't find a database entry for "Sparrow80"
+You're missing a field name---line 165 of file bibliografia.bib
+ : 
+ : }
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Warning--empty title in atmeldiagrama
 Warning--empty title in Datasheet
-You've used 5 entries,
+You've used 10 entries,
             3271 wiz_defined-function locations,
-            694 strings with 5896 characters,
-and the built_in function-call counts, 2339 in all, are:
-= -- 178
-> -- 74
-< -- 6
-+ -- 29
-- -- 24
-* -- 133
-:= -- 385
-add.period$ -- 13
-call.type$ -- 5
-change.case$ -- 33
-chr.to.int$ -- 5
-cite$ -- 7
-duplicate$ -- 204
-empty$ -- 181
-format.name$ -- 31
-if$ -- 444
+            707 strings with 6294 characters,
+and the built_in function-call counts, 4419 in all, are:
+= -- 361
+> -- 116
+< -- 12
++ -- 46
+- -- 36
+* -- 231
+:= -- 716
+add.period$ -- 29
+call.type$ -- 10
+change.case$ -- 65
+chr.to.int$ -- 16
+cite$ -- 12
+duplicate$ -- 380
+empty$ -- 368
+format.name$ -- 47
+if$ -- 876
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 44
-newline$ -- 33
-num.names$ -- 20
-pop$ -- 105
+missing$ -- 78
+newline$ -- 59
+num.names$ -- 36
+pop$ -- 190
 preamble$ -- 1
-purify$ -- 28
+purify$ -- 53
 quote$ -- 0
-skip$ -- 73
+skip$ -- 153
 stack$ -- 0
-substring$ -- 55
-swap$ -- 90
+substring$ -- 116
+swap$ -- 157
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 45
+type$ -- 84
 warning$ -- 2
-while$ -- 15
+while$ -- 29
 width$ -- 0
-write$ -- 72
-(There were 7 warnings)
+write$ -- 136
+(There was 1 error message)
