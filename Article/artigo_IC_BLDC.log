@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.7)  16 AUG 2017 14:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.8.23)  7 OCT 2017 05:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -732,7 +732,7 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 (./artigo_IC_BLDC.aux) ) 
 Here is how much of TeX's memory you used:
  3719 strings out of 493029
- 48899 string characters out of 6136235
+ 48899 string characters out of 6136234
  127254 words of memory out of 5000000
  7156 multiletter control sequences out of 15000+600000
  27849 words of font info for 33 fonts, out of 8000000 for 9000
