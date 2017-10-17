@@ -50,7 +50,7 @@
      
      Para isso, foi, inicialmente, desenvolvido o hardware para controle do motor. Em seguida, testes preliminares foram realizados em um motor BLDC de drive de DVD em loop aberto. Após isso, foi realizada a modelagem do motor baseada nos parâmetros físicos fornecidos pelo fabricante; com base nisso, foi possível simular o comportamento do motor e projetar o controlador.
      
-     Dos resultados obtidos, foi possível concluir que o controle do motor só pode ser realizado com feedback. Logo, o controle do motor do drive de DVD em loop aberto não obteve sucesso. No entanto, foi possível realizar o controle do motor Maxon devido ao feedback de sensores de efeito Hall, além do mais os resultados de velocidade angular obtidos pelo motor foram fiéis ao modelo.}\\    
+     Dos resultados obtidos, conclui-se que o controle do motor só pode ser realizado com feedback. Logo, o controle do motor do drive de DVD em loop aberto não obteve sucesso. No entanto, a simulação do controle do motor Maxon com feedback de sensores de efeito Hall obteve sucesso, além do mais os resultados de velocidade angular obtidos pelo motor foram fiéis ao modelo.}\\    
      \keywords{\textbf{Palavras-chave:} Motor elétrico Brushless, Modelagem física, Simulação, Controle de velocidade.}\\
     \end{tabular}
     
@@ -58,28 +58,28 @@
     \section{Introdução}
     A ITAndroids, equipe de robótica do ITA, é uma iniciativa de alunos do ITA que representa a instituição em diversas competições de robótica nacionais e internacionais. O principal objetivo dessa iniciativa é a integração dos alunos com atividades de pesquisa em engenharia, em especial em robótica e inteligência artificial.
     
-    A ITAndroids acredita que o hardware é fundamental no desenvolvimento de qualquer projeto de robótica, por isso, recentemente tem-se investido bastante no desenvolvimento dessa área. O desenvolvimento de conhecimento na área de controle de motores elétricos, assim, torna-se fundamental para a melhoria técnica da iniciativa.
+    A ITAndroids acredita que o hardware é fundamental no desenvolvimento de qualquer projeto de robótica, por isso, recentemente tem-se investido bastante no desenvolvimento dessa área. O desenvolvimento de conhecimento em controle de motores elétricos, assim, torna-se fundamental para a melhoria técnica da iniciativa.
     
-    Nesse sentido, abre-se caminho para a participação na categoria Small Size descrita em \cite{robocupregras}, a qual necessita de uma eletrônica mais desenvolvida o que implica diretamente no desenvolvimento de conhecimento sobre controle de motores. Os motores utilizados para a locomoção dos robôs são motores Brushless, essa escolha se justifica pelo fato de que motores Brushless (sem comutadores mecânicos do tipo escova) são mais eficientes, ocupam menos espaço e apresentam desgaste muito menor que motores DC tradicionais.
+    Nesse sentido, abre-se caminho para a participação na categoria Small Size descrita em \cite{robocupregras}, a qual necessita de uma eletrônica mais desenvolvida o que implica diretamente no desenvolvimento de conhecimento sobre controle de motores. Os motores utilizados para a locomoção dos robôs são motores Brushless, essa escolha se justifica pelo fato de que motores Brushless (sem comutadores mecânicos do tipo escova) são mais eficientes, ocupam menos espaço e apresentam desgaste muito menor que motores DC tradicionais como explicado em \cite{introducaobldc}.
     
-    Uma vez que o desgaste mecânico durante as partidas de futebol de robôs Small Size é elevado e é preciso alto rendimento dos sistemas mecânicos: os motores Brushless, também chamados BLDC são a escolha ideal; além disso, as principais equipes internacionais fazem uso de desses motores. Como principal exemplo temos a equipe tailandesa SKUBA, descrita em \cite{skuba}, na qual se baseia o projeto mecânico do Small Size da ITAndroids. Em contrapartida, o controle deste tipo de atuador mecânico se dá de maneira mais complexa, uma vez que a comutação do campo magnético não é feita mecanicamente por escovas. A Figura \ref{fig:esquemamotor}, abaixo, ilustra a mecânica de um motor BLDC.
+    Uma vez que o desgaste mecânico durante as partidas de futebol de robôs Small Size é elevado e é preciso alto rendimento dos sistemas mecânicos: os motores Brushless, também chamados BLDC são a escolha ideal; além disso, as principais equipes internacionais fazem uso de desses motores. Como principal exemplo temos a equipe tailandesa SKUBA, descrita em \cite{skuba}, na qual se baseia o projeto mecânico do Small Size da ITAndroids. Em contrapartida, o controle deste tipo de atuador elétrico se dá de maneira mais complexa, uma vez que a comutação do campo magnético não é feita mecanicamente por escovas. A Figura \ref{fig:esquemamotor}, abaixo, ilustra a mecânica de um motor BLDC.
 
 	\begin{figure}[ht]
 		\begin{center}
-			\includegraphics[angle=0, scale=0.4]{images/4-Pole-brushless-DC-motor-animation}
+			\includegraphics[angle=0, scale=0.4]{images/4-Pole-brushless-DC-motor-animation.png}
 		\end{center}
-		\caption{\textbf{Esquema completo de um motor elétrico Brushless trifásico. Retirado de \cite{figuramotor}.}}
+		\caption{Esquema completo de um motor elétrico Brushless trifásico. Retirado de \cite{figuramotor}.}
 		\label{fig:esquemamotor}
 	\end{figure}
     
-    O controle da comutação do campo magnético para esse tipo de motor é feito eletronicamente e em malha fechada com explicado em \cite{ogata1982engenharia}, seguindo o procedimento descrito em \cite{introducaobldc}, o que acarreta que seja necessário que um dispositivo eletrônico, tal como um microcontrolador, fique dedicado ao controle de cada um dos quatro motores do robô Small Size. Isso aumenta a complexidade do sistema de locomoção como um todo, no entanto traz diversos ganhos em eficiência para o projeto.
+    O controle da comutação do campo magnético para esse tipo de motor é feito eletronicamente e em malha fechada com explicado em \cite{ogata1982engenharia}, seguindo o procedimento descrito em \cite{introducaobldc}, o que acarreta que seja necessário um dispositivo eletrônico, tal como um microcontrolador, que fique dedicado ao controle de cada um dos quatro motores do robô Small Size. Isso aumenta a complexidade do sistema de locomoção como um todo, no entanto traz diversos ganhos em eficiência para o projeto.
     
-    Nesse sentido, busca-se, aqui, modelar o motor Maxon 45fl-200142 e ser capaz de realizar a comutação eletronicamente. Adicionalmente, deseja-se, simular e implementar um controlador PI.
+    Nesse sentido, fez-se, aqui, a modelagem do motor Maxon 45fl-200142, bem como realizou-se a comutação eletronicamente. Adicionalmente, foi desenvolvida, a simulação de um controlador PI e o projeto eletrônico.
     
     \section{Modelagem do motor}
     \subsection{Funcionamento do motor elétrico Brushless Maxon 45fl-200142}
     
-    Um motor elétrico Brushless têm várias possíveis configurações, no entanto, a configuração trifásica ganha destaque em eficiência. Isso pode ser constatado pela grande preferência no mercado por tal tipo de motor BLDC. O motor aqui estudado é de configuração trifásica, logo, há três entradas cada uma para uma bobina do motor.
+    Um motor elétrico Brushless têm várias possíveis configurações, no entanto, a configuração trifásica ganha destaque como explicitado em \cite{introducaobldc}. Isso pode ser constatado pela grande preferência no mercado por tal tipo de motor BLDC. O motor aqui estudado é de configuração trifásica, logo, há três entradas uma para cada bobina do motor.
     
     Isso significa que existem três fases diferentes que devem ser eletronicamente comutadas para que se obtenha a rotação do motor. Além disso, o ciclo de rotação do motor é composto de seis etapas distintas, portanto o motor rotaciona com uma comutação de seis passos. Há apenas uma sequência correta de seis combinações das fases do motor para cada sentido de rotação. Pode-se, no entanto, encontrar sequências de comutação distintas das duas principais que rotacionam o motor. Comutações com essas sequências resultam em menor eficiência e perda de precisão na rotação, por isso, é essencial encontrar as sequências corretas de comutação.
     
@@ -87,9 +87,9 @@
 
 	\begin{figure}[ht]
 		\begin{center}
-			\includegraphics[angle=0, scale=0.5]{images/comutacao}
+			\includegraphics[angle=0, scale=0.5]{images/comutacao_review}
 		\end{center}
-		\caption{\textbf{Contra eletromotriz nas três fases de um motor BLDC comutando. Retirado de \cite{introducaobldc}.}}
+		\caption{Força eletromotriz nas três fases de um motor BLDC comutando. Retirado de \cite{introducaobldc}.}
 		\label{fig:comutacao}
 	\end{figure}
     
@@ -128,9 +128,9 @@
     
 	\begin{figure}[ht]
 		\begin{center}
-			\includegraphics[angle=0, scale=0.5]{images/circuitdiagram}
+			\includegraphics[angle=0, scale=0.6]{images/transistores}
 		\end{center}
-		\caption{\textbf{Diagrama do circuito para acionamento do motor. Retirado de \cite{atmeldiagrama}.}}
+		\caption{Diagrama ilustrativo do circuito para acionamento do motor. Retirado de \cite{modelomotor}.}
 		\label{fig:diagrama}
 	\end{figure}
     
@@ -142,7 +142,7 @@
 		\begin{center}
 			\includegraphics[angle=0, scale=0.06]{images/montagemcircuito}
 		\end{center}
-		\caption{\textbf{Figura da montagem do circuito para controle do motor.}}
+		\caption{Figura da montagem do circuito para controle do motor.}
 		\label{fig:montagemcircuito}
 	\end{figure}
 
@@ -150,20 +150,20 @@
 		\begin{center}
 			\includegraphics[angle=0, scale=0.06]{images/motorantigo}
 		\end{center}
-		\caption{\textbf{Motor de drive de DVD utilizado nos testes, nota-se que não há saídas para sensores de efeito Hall.}}
+		\caption{Motor de drive de DVD utilizado nos testes, nota-se que não há saídas para sensores de efeito Hall.}
 		\label{fig:motorantigo}
 	\end{figure}
     
     Em uma segunda etapa, utilizou-se o motor Maxon 45fl-200142, cujo controle é o objetivo deste estudo. Nesse caso, foi possível utilizar o feedback dos sensores de efeito Hall e obter uma rotação suave, além disso, foi desenvolvido um script para a obtenção da tabela de comutação, uma vez que esta não é fornecida pelo fabricante. O que este script faz é ciclizar lentamente (1s) as saídas do motor conforme descrito na sequência de comutação direta em \cite{atmeldiagrama} e, em seguida, fazer a leitura dos sensores de efeito Hall. Com isso, é possível montar a tabela de comutação direta; a tabela inversa é montada por meio da tabela direta, apenas invertendo a lógica de rotação.
     
-    Este script pode ser, posteriormente, utilizado para a obtenção da tabela de comutação de qualquer motor Brushless com sensores de efeito Hall. Vale ressaltar que a regulação da velocidade aqui é feita utilizando PWM. Para isso, uma saída PWM é gerada para cada transistor que leva corrente do motor ao ground, seguindo o esquema mostrado em Fig. \ref{fig:diagrama}.
+    Este script pode ser, posteriormente, utilizado para a obtenção da tabela de comutação de qualquer motor Brushless com sensores de efeito Hall. Vale ressaltar que a regulação da velocidade aqui é feita utilizando PWM. Para isso, uma saída PWM é gerada para cada transistor que leva corrente do motor ao terra, seguindo o esquema mostrado em Fig. \ref{fig:diagrama}.
     A Figura \ref{fig:motornovo}, abaixo, mostra o motor da Maxon rotacionando. Mais adiante serão tratados os aspectos de controle implementados.
 
 	\begin{figure}[ht]
 		\begin{center}
 			\includegraphics[angle=0, scale=0.06]{images/motornovo}
 		\end{center}
-		\caption{\textbf{Motor Maxon 45fl-200142 rotacionando.}}
+		\caption{Motor Maxon 45fl-200142 rotacionando.}
 		\label{fig:motornovo}
 	\end{figure}
 
@@ -175,17 +175,17 @@
 
 	\begin{figure}[ht]
 		\begin{center}
-			\includegraphics[angle=0, scale=0.7]{images/stepResponse}
+			\includegraphics[angle=0, scale=0.7]{images/stepResponse_review}
 		\end{center}
-		\caption{\textbf{Análise da resposta à um degrau unitário da planta de Eq. (\ref{plantamotor}).}}
+		\caption{Análise da resposta à um degrau unitário da planta de Eq. (\ref{plantamotor}).}
 		\label{fig:respostaemdegrau}
 	\end{figure}
 
 	\begin{figure}[ht]
 		\begin{center}
-			\includegraphics[angle=0, scale=0.7]{images/bode}
+			\includegraphics[angle=0, scale=0.7]{images/bode_review}
 		\end{center}
-		\caption{\textbf{Diagrama de bode para a planta de Eq. (\ref{plantamotor}).}}
+		\caption{Diagrama de bode para a planta de Eq. (\ref{plantamotor}).}
 		\label{fig:bode}
 	\end{figure}
     
@@ -201,23 +201,23 @@
     	\begin{center}
     		\includegraphics[angle=0, scale=0.4]{images/sistemaEControlador}
     	\end{center}
-    	\caption{\textbf{Sistema completo modelado com auxílio do SIMULINK$^{\small{\textbf{TM}}}$.}}
+    	\caption{Sistema completo modelado com auxílio do SIMULINK$^{\small{\textbf{TM}}}$.}
     	\label{fig:sistemasimulink}
     \end{figure}
 
 	\begin{figure}[ht]
 		\begin{center}
-			\includegraphics[angle=0, scale=0.8]{images/margins.png}
+			\includegraphics[angle=0, scale=0.8]{images/margins_review}
 		\end{center}
-		\caption{\textbf{Margens de estabilidade do sistema em estudo.}}
+		\caption{Margens de estabilidade do sistema em estudo.}
 		\label{fig:margin}
 	\end{figure}
 
 	\begin{figure}[ht]
 		\begin{center}
-			\includegraphics[angle=0, scale=0.6]{images/sistemStep}
+			\includegraphics[angle=0, scale=0.6]{images/sistemStep_review}
 		\end{center}
-		\caption{\textbf{Saída de velocidade angular com valor fixado em 100rad/s.}}
+		\caption{Saída de velocidade angular com valor fixado em 100rad/s.}
 		\label{fig:saidasimulada}
 	\end{figure}
     
@@ -235,9 +235,9 @@
     
     \section{Considerações finais}
     
-    Após a implementação do algoritmo, observou-se que o motor era capaz de atingir a velocidade de 99.2 radianos por segundo, o que mostra que o modelo se adéqua aos parâmetros físicos do sistema.
+    Após a implementação do algoritmo e teste preliminar no sistema real, observou-se que o motor era capaz de atingir a velocidade de 99.2 radianos por segundo, o que mostra que o modelo se adéqua aos parâmetros físicos do sistema.
     
-    Ressalta-se, por fim, que existem alguns melhoramentos a serem realizados no controlador antes da implementação final no robô. Pode-se incluir uma malha de corrente, uma vez que o hardware do robô permite. Além disso, deve-se contar a inércia do robô no modelo final a ser utilizado e seria interessante analisar a influência de outros efeitos na simulação como a discretização do controlador, atrasos presentes na malha, atrito seco e a quantização do encoder. Os testes realizados no sistema, também, devem ser refeitos no hardware final.
+    Ressalta-se, por fim, que existem alguns melhoramentos a serem realizados no controlador antes da implementação final no robô. Pode-se incluir uma malha de corrente, uma vez que o hardware do robô permite. Além disso, deve-se contabilizar a inércia do robô no modelo final a ser utilizado e seria interessante analisar a influência de outros efeitos na simulação como a discretização do controlador, atrasos presentes na malha, atrito seco e a quantização do encoder. Os testes realizados no sistema, também, devem ser refeitos no hardware final.
     
     Após a implementação do controlador aqui desenvolvida os próximos passos são de implementação no robô. Pretende-se implementar o controlador em uma FPGA, a qual está presente na placa principal do robô. O robô terá sua estrutura mecânica finalizada e será feia a integração dos sistemas eletrônicos e mecânicos, bem como a comunicação do hardware produzido com o computador.
  
@@ -248,7 +248,7 @@
 		\begin{center}
 			\includegraphics[angle=0, scale=0.3]{images/smallfoto}
 		\end{center}
-		\caption{\textbf{Fotografia do primeiro protótipo do robô Small Size com os quatro motores posicionados e operacionais.}}
+		\caption{Fotografia do primeiro protótipo do robô Small Size com os quatro motores posicionados e operacionais.}
 		\label{fig:smallfoto}
 	\end{figure}
 
